@@ -13,6 +13,13 @@
 @main:    #084A7A;
 @sec:     #3DA5D8;
 
+@color1: #E41387;
+@color2: #88BF41;
+@color3: #03AEC8;
+@color4: #912D8D;
+@color5: #F39D2C;
+@color6: #E6262B;
+
 /* FONTS */
 
 .font{ font-family: 'Roboto Slab', serif; }
@@ -68,6 +75,50 @@ body{
 
 header{
   padding: 20px 0 0 0;
+  position: relative;
+  .logo{position: relative;z-index: 1;}
+  &:before{
+    content:"";
+    background-image:url(img/masmodernidad.jpg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain;
+    width: 400px;
+    height: 200px;
+    position: absolute;
+    right: 0;bottom: 0;
+    z-index: 0;
+    @media @tablet{
+      width: 250px;
+      height: 100px;
+      top: 0; bottom: auto;
+    }
+    @media @mobile{
+      width: 200px;
+      height: 80px;
+      top: 0; bottom: auto;
+    }
+  }
+  &:after{
+    content:"";
+    background-image:url(img/squares.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain;
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    left: 0;top: 0;
+    @media @tablet{
+      width: 200px;
+      height: 80px;
+    }
+    @media @mobile{
+      width: 100px;
+      height: 40px;
+    }
+  }
+
 
   nav{
     width: 100%;
@@ -115,6 +166,12 @@ header{
           bottom: 4px;
           text-align: center;
         }
+        &:nth-child(2):hover{border-color:@color1;}
+        &:nth-child(3):hover{border-color:@color2;}
+        &:nth-child(4):hover{border-color:@color3;}
+        &:nth-child(5):hover{border-color:@color4;}
+        &:nth-child(6):hover{border-color:@color5;}
+        &:nth-child(7):hover{border-color:@color6;}
       }
     }
   }
@@ -329,6 +386,12 @@ aside{
     li{
       padding: 15px;
       border-bottom: 1px @w/1.2 solid;
+      &:nth-child(2) .fa{color:@color1;}
+      &:nth-child(3) .fa{color:@color2;}
+      &:nth-child(4) .fa{color:@color3;}
+      &:nth-child(2) .fa{color:@color4;}
+      &:nth-child(3) .fa{color:@color5;}
+      &:nth-child(4) .fa{color:@color6;}
     }
   }
 }

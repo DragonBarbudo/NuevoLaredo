@@ -1596,6 +1596,64 @@ body {
 }
 header {
   padding: 20px 0 0 0;
+  position: relative;
+}
+header .logo {
+  position: relative;
+  z-index: 1;
+}
+header:before {
+  content: "";
+  background-image: url(img/masmodernidad.jpg);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+@media only screen and (min-width: 721px) and (max-width: 1199px) {
+  header:before {
+    width: 250px;
+    height: 100px;
+    top: 0;
+    bottom: auto;
+  }
+}
+@media only screen and (max-width: 720px) {
+  header:before {
+    width: 200px;
+    height: 80px;
+    top: 0;
+    bottom: auto;
+  }
+}
+header:after {
+  content: "";
+  background-image: url(img/squares.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: contain;
+  width: 250px;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media only screen and (min-width: 721px) and (max-width: 1199px) {
+  header:after {
+    width: 200px;
+    height: 80px;
+  }
+}
+@media only screen and (max-width: 720px) {
+  header:after {
+    width: 100px;
+    height: 40px;
+  }
 }
 header nav {
   width: 100%;
@@ -1744,6 +1802,24 @@ header nav ul li .fa {
   left: 0;
   bottom: 4px;
   text-align: center;
+}
+header nav ul li:nth-child(2):hover {
+  border-color: #E41387;
+}
+header nav ul li:nth-child(3):hover {
+  border-color: #88BF41;
+}
+header nav ul li:nth-child(4):hover {
+  border-color: #03AEC8;
+}
+header nav ul li:nth-child(5):hover {
+  border-color: #912D8D;
+}
+header nav ul li:nth-child(6):hover {
+  border-color: #F39D2C;
+}
+header nav ul li:nth-child(7):hover {
+  border-color: #E6262B;
 }
 .subheader {
   background-image: 8121991;
@@ -1983,4 +2059,22 @@ aside ul {
 aside ul li {
   padding: 15px;
   border-bottom: 1px #cccccc solid;
+}
+aside ul li:nth-child(2) .fa {
+  color: #E41387;
+}
+aside ul li:nth-child(3) .fa {
+  color: #88BF41;
+}
+aside ul li:nth-child(4) .fa {
+  color: #03AEC8;
+}
+aside ul li:nth-child(2) .fa {
+  color: #912D8D;
+}
+aside ul li:nth-child(3) .fa {
+  color: #F39D2C;
+}
+aside ul li:nth-child(4) .fa {
+  color: #E6262B;
 }

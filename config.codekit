@@ -73,6 +73,17 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/app\/img\/masmodernidad.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24877,
+		"inputAbbreviatedPath": "\/app\/img\/masmodernidad.jpg",
+		"outputAbbreviatedPath": "\/app\/img\/masmodernidad.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/app\/img\/nuevolaredo.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -80,6 +91,17 @@
 		"initialSize": 55178,
 		"inputAbbreviatedPath": "\/app\/img\/nuevolaredo.png",
 		"outputAbbreviatedPath": "\/app\/img\/nuevolaredo.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/app\/img\/squares.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18838,
+		"inputAbbreviatedPath": "\/app\/img\/squares.png",
+		"outputAbbreviatedPath": "\/app\/img\/squares.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
