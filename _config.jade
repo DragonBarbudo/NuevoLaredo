@@ -1,0 +1,144 @@
+- // Dragon Webeloper 4
+- // _config.jade | 0.1
+
+include dw4/_dw4.jade
+
+- // CSS ################################################################################
+- css('https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/3.2.0/sanitize.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/css/buttons.min.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.4/css/swipebox.min.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css')
+- css('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+
+- css('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab')
+
+
+- css('app/app.css')
+
+- // JS ################################################################################
+
+
+- js('https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
+- js('https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/js/buttons.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.4/js/jquery.swipebox.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angular-slick-carousel/3.1.5/angular-slick.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.3.3/angular-google-maps.js')
+- js('https://cdn.rawgit.com/rprovost/ng-backstretch/master/dist/ng-backstretch.min.js')
+- js('https://cdn.rawgit.com/novayagazeta-app/angular-swipebox/master/dist/angular-swipebox.min.js')
+- js('https://cdn.rawgit.com/nmccready/angular-simple-logger/master/dist/angular-simple-logger.light.min.js')
+
+- js('app/app.js')
+
+- // MENU ################################################################################
+
+//- menu('Inicio', 'index.html')
+- menu('Cultura', 'cultura.html')
+- menu('Turismo', 'turismo.html')
+- menu('Trámites y servicios <i class="fa fa-angle-down"></i>', '#tramites-y-servicios')
+- menu('Pago de servicios', 'pago-de-servicios.html', '#tramites-y-servicios')
+- menu('Notariales', 'notariales.html', '#tramites-y-servicios')
+- menu('Registro civil', 'registro-civil.html', '#tramites-y-servicios')
+- menu('Transparencia', 'http://nld.gob.mx/index.php?m=transparencia&tipo=oficios', null, {'target':'_blank'})
+- menu('Acércate <i class="fa fa-angle-down"></i>', '#acercate')
+- menu('Gabinete', 'gabinete.html', '#acercate')
+- menu('Directorio', 'directorio.html', '#acercate')
+- menu('Buzón de quejas y sugerencias', 'buzon.html', '#acercate')
+- menu('Noticias', 'noticias.html')
+- menu('Sala de prensa', 'sala-de-prensa.html')
+
+
+
+
+mixin topbar
+  .topbar
+    .container
+      .c6.ct12.cm12
+        .container.tac
+          .c.cm12.telefono
+            i.fa.fa-phone
+            span  01-800-987-654
+          a.c.cm12(href="mailto:admin@nuevolaredo.gob.mx")
+            i.fa.fa-envelope
+            span  admin@nuevolaredo.gob.mx
+          a.c.cm12(href="#")
+            i.fa.fa-user
+            span  Iniciar sesión
+      .c6.ct12.cm12.redes.tar
+        a(href="http://twitter.com"): i.fa.fa-twitter
+        a(href="http://facebook.com"): i.fa.fa-facebook
+        a(href="http://youtube.com"): i.fa.fa-youtube
+        a(href="http://instagram.com"): i.fa.fa-instagram
+
+mixin header
+  header
+    .container: .c.tac: a(href="index.html"): img(src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo")
+    +menu
+    
+    
+mixin subheader(title)
+  .subheader
+    h1 #{title}
+    
+mixin footer
+  footer
+    .container
+      .c4.ct12.cm12.g
+        h2 Próximos eventos
+        ul.proximos-eventos.container
+          - for(var i = 0; i<4; i++ )
+            li.c12.ct6.cm12
+              .container
+                .c3.g: .img(style="background-image: url(http://placehold.it/100x100)")
+                .c8.g
+                  a(href="#") Exportan arte realizado con tambos y cubetas de lámina...
+              
+      .c4.ct6.cm12.g.sobre
+        h2 Sobre tu gobierno
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque accusantium, dolore impedit magnam repellendus repudiandae eius blanditiis iure molestiae sequi officia, soluta, commodi repellat? Ad voluptates minima cumque eius vitae.
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tenetur, nobis veritatis nostrum possimus, distinctio, dolor iusto natus architecto ea dignissimos fugiat qui rem eligendi labore id sunt minus est!
+          
+      .c4.ct6.cm12.g
+        h2 Síguenos en Facebook
+        .tac
+          | <div class="fb-page" data-href="https://www.facebook.com/gobiernodenuevolaredo/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
+  
+    .end
+      .container.middle
+        .c6.cm12.g.tac
+          .footer-logo: a(href="index.html"): img(src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo")
+          p Todos lo Derechos Reservados. 2016
+        .c6.cm12.g.tar
+          .container.tal
+            .c6.g.first: +menu
+            .c6.g.second: +menu
+
+
+mixin moduloNota
+  a(href="#").moduloNota.container.fluid
+    .c12.img(style="background-image:url(http://placehold.it/420x220)")
+    .c12.g: .title El presidente municipal se reunió con miembros del Club Rotario
+    .c12.g: .date
+      i.fa.fa-calendar-o
+      |  Noviembre 25, 2005
+    .c12.g: p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+
+mixin moduloGabinete
+  .moduloGabinete.container.fluid
+    .c12.img(style="background-image:url(http://placehold.it/420x420)")
+      .hover.container.middle.center
+        .c
+          .name Gabriel Ramirez
+          .job-title Director ejecutivo
+    .c10.g
+      .title Gabriel Ramirez
+      p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    .c2.g.social.tac
+      a(href="#"): i.fa.fa-twitter
+      a(href="#"): i.fa.fa-facebook

@@ -1,0 +1,43 @@
+include _config.jade
+
++html5
+  +head('Gobierno de Nuevo Laredo', 'Palabras clave', 'Descripción')
+  
+  body(ng-app="dw4")
+    #fb-root
+    
+    +topbar
+    +header
+    
+    
+    section.sliders
+      slick(arrows="false" as-nav-for="#menuslider" responsive="[{breakpoint:720,settings:{arows:true}}]")#mainslider
+        - for(var i = 0; i<4; i++ )
+          div(style="background-image:url(http://placehold.it/1200x480)")
+            .container.fluid.middle
+              .c10.o1.slider-date Noviembre 25, 2005
+              .c6.o1.cm10.slider-title El presidente municipal se reunió con miembros del Club Rotario
+              .c6.o1.cm10: a.slider-link(href="#").button.button-border Leer más
+      slick(arrows="false" as-nav-for="#mainslider" focus-on-select="true" vertical-swiping="true" vertical="true" slides-to-show="3")#menuslider.nom
+        - for(var i = 0; i<4; i++ )
+          div
+            .container.fluid.middle
+              .c10.slider-type Noticia
+              .c10.slider-title El presidente municipal se reunió con miembros del Club Rotario
+  
+    section.ultimas-noticias
+      .container
+        .c12.tac
+          h2 Últimas Noticias
+          p Te presentamos los sucesos más recientes y relevantes de nuestra comunidad.
+      .container
+        .c12
+          slick(slides-to-show="3" autoplay="true" responsive="[{breakpoint:720,settings:{slidesToShow:1}}]")#noticiasslider
+            - for(var i = 0; i<4; i++ )
+              div
+                +moduloNota
+    
+    +footer
+        
+    +scripts
+    

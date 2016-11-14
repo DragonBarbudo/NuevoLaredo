@@ -1,0 +1,47 @@
+// Dragon Webeloper 4
+// dw4.jade | 0.1
+
+
+@import 'less/_mediaqueries';
+//https://github.com/madebysource/lesshat/blob/master/README.md
+@import 'less/_lesshat';
+//https://github.com/pixelass/homeless
+@import 'less/_home';
+@import 'less/_grid';
+
+
+
+
+//Break floats
+.clearfix{ *zoom:1; &:before,&:after { content:""; display:table;} &:after { clear:both; 	}}
+//Width 100%
+.fluid{ width: 100%; }
+//Test
+.t{ outline: 1px dashed rgba(0,0,0,0.2); }
+//Alignment
+.tac{text-align: center;}
+.tar{text-align: right;}
+.tal{text-align: left;}
+//QuickMargins
+.mall{ margin: @gutterWidth;}
+.mt{ margin-top: @gutterWidth; }
+.mb{ margin-bottom: @gutterWidth; }
+.mt2{ margin-top: @gutterWidth*2; }
+.mb2{ margin-bottom: @gutterWidth*2; }
+//Colors
+//BGS
+.bg-b{ background:@b; color:@w; }
+.bg-w{ background:@w; color:@b; }
+.bg-g{ background:@g; }
+.bg-main{ background:@main; }
+.bg-sec{ background:@sec; }
+//Colors
+.col-b{ color:@b; }
+.col-w{ color:@w; }
+.col-g{ color:@g; }
+.col-main{ color:@main; }
+.col-sec{ color:@sec; }
+
+
+//Backstretch
+[backstretch]{position: relative;}

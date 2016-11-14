@@ -1,0 +1,27 @@
+/* MEDIA QUERIES */
+
+@containerWidthLow : ( @containerWidth - 1 );
+@containerWidthTabletHigh : (@containerWidthTablet + 1);
+
+@mediamaxin: ~"only screen and (max-width: ";
+@mediamin:   ~"only screen and (min-width: ";
+@mediamax:   ~") and (max-width: ";
+@mediaend:   ~")";
+
+
+
+@mobile:  ~"@{mediamaxin}@{containerWidthTablet}@{mediaend}";
+@tablet:  ~"@{mediamin}@{containerWidthTabletHigh}@{mediamax}@{containerWidthLow}@{mediaend}";
+@desktop: ~"@{mediamin}@{containerWidth}@{mediaend}";
+
+
+//NO's
+.nod{ @media @desktop{display:none !important;} }
+.not{ @media @tablet, @mobile{ display: none !important; } }
+.nom{ @media @mobile{ display: none !important; } }
+
+//ONLY's
+.onlyd{ @media @tablet, @mobile{display: none !important;} }
+.onlyt{ @media @desktop, @mobile{display: none !important;} }
+.onlym{ @media @tablet, @desktop{display: none !important;} }
+/* ####################################################### */

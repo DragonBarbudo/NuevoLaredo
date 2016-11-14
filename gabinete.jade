@@ -1,0 +1,23 @@
+include _config.jade
+
++html5
+  +head('Gobierno de Nuevo Laredo', 'Palabras clave', 'Descripción')
+  
+  body(ng-app="dw4")
+    #fb-root
+    
+    +topbar
+    +header
+    +subheader('Gabinete')
+    section.gabinete
+      .container: .c6.o3: +moduloGabinete
+      .container
+        - for(var i=0;i<6;i++)
+          .c4.g: +moduloGabinete
+    
+    
+    
+    +footer
+        
+    +scripts
+    

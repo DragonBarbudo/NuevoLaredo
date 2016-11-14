@@ -1,0 +1,105 @@
+- // Dragon Webeloper 4
+- // dw4.jade | 0.1
+
+- //VARIABLES
+
+- var stylesheets = []
+- var javascripts = []
+- var menuNav = []
+
+- // MIXINS
+
+mixin html5
+  doctype html
+  html(lang="es")
+    if block
+      block
+
+mixin head(title, keywords, description)
+  - if(!keywords){keywords=""}
+  - if(!description){description=""}
+  head
+    meta(charset="utf-8")
+    title=title
+    meta(name="keywords", content=keywords)
+    meta(name="description", content=description)
+    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+    link(rel="icon", type="image/png", href="favicon.png")
+    +stylesheets
+    if block
+      block
+
+mixin scripts
+  - each js in javascripts
+    script(src=js)
+    
+mixin stylesheets
+  - each styles in stylesheets
+    link(rel="stylesheet", href=styles)
+
+mixin menu
+  nav
+    if block
+      block
+    ul
+      - each item in menuNav
+        - if(item[2]==null)
+          li
+            a(href="#{item[1]}")&attributes(item[3]) !{item[0]}
+            - each subitem in menuNav
+              - if(subitem[2] == item[1])
+                ul
+                  - each subitem in menuNav
+                    - if(subitem[2] == item[1])
+                      li
+                        a(href="#{subitem[1]}")&attributes(subitem[3]) !{subitem[0]}
+                        - each subitemB in menuNav
+                          - if(subitemB[2] == subitem[0])
+                            ul
+                              - each subitemB in menuNav
+                                - if(subitemB[2] == subitem[1])
+                                  li
+                                    a(href="#{subitemB[1]}")&attributes(subitemB[3]) !{subitemB[0]}
+                            - break
+                - break
+
+
+mixin form(_to, _subject , respuesta)
+  - if(!respuesta){ respuesta = "Mensaje enviado. Nos pondremos en contacto."}
+  form(ng-controller="FormCtrl", ng-submit="submitForm($event)")&attributes(attributes)
+    input(type="hidden", name="_to", value="#{to}")
+    input(type="email", name="_from", ng-model="email").not.nom.nod
+    input(type="hidden", name="_subject", value="#{_subject}")
+    div(ng-hide="sent")
+      if block
+        block
+      else
+        .c12.g
+          input(type="text", placeholder="Nombre", name="Nombre" required)
+        .c12.g
+          input(type="email", placeholder="Correo electrónico", name="Email", ng-model="email", required)
+        .c12.g
+          input(type="text", placeholder="Teléfono", name="Telefono")
+        .c12.g
+          textarea(placeholder="Su mensaje", name="Mensaje", required)
+        .c12.g.tac
+          button(type="submit").button.button-pill.button-primary
+            i.fa.fa-envelope
+            span  Enviar mensaje
+            
+    div(ng-show="sent").result = respuesta
+
+
+
+
+- // FUNCTIONS
+
+- function css(sheet){ stylesheets.push(sheet); }
+
+- function js(script){ javascripts.push(script); }
+
+- function menu(name, link, parent, attrs){
+    - if(!link){link='#'}
+    - if(!attrs){attrs={}}
+    - menuNav.push([name,link, parent, attrs])
+- }
