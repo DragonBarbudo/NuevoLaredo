@@ -1521,10 +1521,43 @@ margin-left:calc(100% + 10px);
   margin: 4px;
 }
 .moduloGabinete .social a:hover .fa-twitter {
-  color: #55ACEE;
+  color: #55ACEE !important;
 }
 .moduloGabinete .social a:hover .fa-facebook {
-  color: #3C5A96;
+  color: #3C5A96 !important;
+}
+.moduloDirectorio {
+  padding: 10px;
+  background: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #969696;
+}
+.moduloDirectorio div {
+  margin: 5px 0;
+}
+.moduloDirectorio .what {
+  color: #888;
+  font-size: 1.4em;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.moduloDirectorio .mail a,
+.moduloDirectorio .phone a {
+  color: #3DA5D8;
+}
+.moduloDirectorio .addr {
+  font-size: 0.8em;
+}
+.moduloDirectorio .addr strong {
+  font-weight: bold;
+  color: #888;
+  font-size: 1.2em;
+}
+.moduloDirectorio .fa {
+  font-size: 1.2em;
+  width: 40px;
+  text-align: center;
+  color: #888;
 }
 /* WIDTHS */
 /* COLORS */
@@ -1935,6 +1968,9 @@ section.sliders #menuslider .slick-slide.slick-current {
   -moz-opacity: 1;
   opacity: 1;
 }
+section.sliders #menuslider .slick-slide.slick-current .slider-type {
+  color: #E41387;
+}
 section.ultimas-noticias {
   padding-top: 40px;
   padding-bottom: 40px;
@@ -2032,8 +2068,117 @@ footer .end .second > nav > ul > li:nth-child(4) {
 }
 section.noticias,
 section.prensa,
-section.gabinete {
+section.gabinete,
+section.directorio {
   background: #f5f5f5;
+}
+section.noticias .c6:nth-child(2) .fa,
+section.prensa .c6:nth-child(2) .fa,
+section.gabinete .c6:nth-child(2) .fa,
+section.directorio .c6:nth-child(2) .fa,
+section.noticias .c4:nth-child(2) .fa,
+section.prensa .c4:nth-child(2) .fa,
+section.gabinete .c4:nth-child(2) .fa,
+section.directorio .c4:nth-child(2) .fa,
+section.noticias .c6:nth-child(9) .fa,
+section.prensa .c6:nth-child(9) .fa,
+section.gabinete .c6:nth-child(9) .fa,
+section.directorio .c6:nth-child(9) .fa,
+section.noticias .c4:nth-child(9) .fa,
+section.prensa .c4:nth-child(9) .fa,
+section.gabinete .c4:nth-child(9) .fa,
+section.directorio .c4:nth-child(9) .fa {
+  color: #E41387;
+}
+section.noticias .c6:nth-child(3) .fa,
+section.prensa .c6:nth-child(3) .fa,
+section.gabinete .c6:nth-child(3) .fa,
+section.directorio .c6:nth-child(3) .fa,
+section.noticias .c4:nth-child(3) .fa,
+section.prensa .c4:nth-child(3) .fa,
+section.gabinete .c4:nth-child(3) .fa,
+section.directorio .c4:nth-child(3) .fa,
+section.noticias .c6:nth-child(10) .fa,
+section.prensa .c6:nth-child(10) .fa,
+section.gabinete .c6:nth-child(10) .fa,
+section.directorio .c6:nth-child(10) .fa,
+section.noticias .c4:nth-child(10) .fa,
+section.prensa .c4:nth-child(10) .fa,
+section.gabinete .c4:nth-child(10) .fa,
+section.directorio .c4:nth-child(10) .fa {
+  color: #88BF41;
+}
+section.noticias .c6:nth-child(4) .fa,
+section.prensa .c6:nth-child(4) .fa,
+section.gabinete .c6:nth-child(4) .fa,
+section.directorio .c6:nth-child(4) .fa,
+section.noticias .c4:nth-child(4) .fa,
+section.prensa .c4:nth-child(4) .fa,
+section.gabinete .c4:nth-child(4) .fa,
+section.directorio .c4:nth-child(4) .fa,
+section.noticias .c6:nth-child(11) .fa,
+section.prensa .c6:nth-child(11) .fa,
+section.gabinete .c6:nth-child(11) .fa,
+section.directorio .c6:nth-child(11) .fa,
+section.noticias .c4:nth-child(11) .fa,
+section.prensa .c4:nth-child(11) .fa,
+section.gabinete .c4:nth-child(11) .fa,
+section.directorio .c4:nth-child(11) .fa {
+  color: #03AEC8;
+}
+section.noticias .c6:nth-child(5) .fa,
+section.prensa .c6:nth-child(5) .fa,
+section.gabinete .c6:nth-child(5) .fa,
+section.directorio .c6:nth-child(5) .fa,
+section.noticias .c4:nth-child(5) .fa,
+section.prensa .c4:nth-child(5) .fa,
+section.gabinete .c4:nth-child(5) .fa,
+section.directorio .c4:nth-child(5) .fa,
+section.noticias .c6:nth-child(12) .fa,
+section.prensa .c6:nth-child(12) .fa,
+section.gabinete .c6:nth-child(12) .fa,
+section.directorio .c6:nth-child(12) .fa,
+section.noticias .c4:nth-child(12) .fa,
+section.prensa .c4:nth-child(12) .fa,
+section.gabinete .c4:nth-child(12) .fa,
+section.directorio .c4:nth-child(12) .fa {
+  color: #912D8D;
+}
+section.noticias .c6:nth-child(6) .fa,
+section.prensa .c6:nth-child(6) .fa,
+section.gabinete .c6:nth-child(6) .fa,
+section.directorio .c6:nth-child(6) .fa,
+section.noticias .c4:nth-child(6) .fa,
+section.prensa .c4:nth-child(6) .fa,
+section.gabinete .c4:nth-child(6) .fa,
+section.directorio .c4:nth-child(6) .fa,
+section.noticias .c6:nth-child(13) .fa,
+section.prensa .c6:nth-child(13) .fa,
+section.gabinete .c6:nth-child(13) .fa,
+section.directorio .c6:nth-child(13) .fa,
+section.noticias .c4:nth-child(13) .fa,
+section.prensa .c4:nth-child(13) .fa,
+section.gabinete .c4:nth-child(13) .fa,
+section.directorio .c4:nth-child(13) .fa {
+  color: #F39D2C;
+}
+section.noticias .c6:nth-child(7) .fa,
+section.prensa .c6:nth-child(7) .fa,
+section.gabinete .c6:nth-child(7) .fa,
+section.directorio .c6:nth-child(7) .fa,
+section.noticias .c4:nth-child(7) .fa,
+section.prensa .c4:nth-child(7) .fa,
+section.gabinete .c4:nth-child(7) .fa,
+section.directorio .c4:nth-child(7) .fa,
+section.noticias .c6:nth-child(14) .fa,
+section.prensa .c6:nth-child(14) .fa,
+section.gabinete .c6:nth-child(14) .fa,
+section.directorio .c6:nth-child(14) .fa,
+section.noticias .c4:nth-child(14) .fa,
+section.prensa .c4:nth-child(14) .fa,
+section.gabinete .c4:nth-child(14) .fa,
+section.directorio .c4:nth-child(14) .fa {
+  color: #E6262B;
 }
 aside h2 {
   color: #222;

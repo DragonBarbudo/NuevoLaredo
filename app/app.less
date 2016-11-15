@@ -265,8 +265,7 @@ section.sliders{
         color:@w;
         font-size: 1.1em;
       }
-      &.slick-current{.opacity(1);}
-
+      &.slick-current{.opacity(1); .slider-type{color:@color1;}}
     }
   }
 }
@@ -364,8 +363,20 @@ footer{
 
 .proximamente{ font-size: 4em; color:@g; padding: 100px 0; .tac;}
 
-section.noticias, section.prensa, section.gabinete{
+section.noticias,
+section.prensa,
+section.gabinete,
+section.directorio{
   background: @w;
+  .c6, .c4{
+    &:nth-child(2) .fa, &:nth-child(9) .fa{color:@color1;}
+    &:nth-child(3) .fa, &:nth-child(10) .fa{color:@color2;}
+    &:nth-child(4) .fa, &:nth-child(11) .fa{color:@color3;}
+    &:nth-child(5) .fa, &:nth-child(12) .fa{color:@color4;}
+    &:nth-child(6) .fa, &:nth-child(13) .fa{color:@color5;}
+    &:nth-child(7) .fa, &:nth-child(14) .fa{color:@color6;}
+
+  }
 }
 
 aside{

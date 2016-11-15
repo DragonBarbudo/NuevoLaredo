@@ -10,9 +10,11 @@ include _config.jade
     +header
     +subheader('Directorio')
     
-    section.cultura
-      .proximamente DIRECTORIO<BR>PRÓXIMAMENTE
-    
+    section.directorio
+
+      .container
+        - for(var i=0;i<12;i++)
+          .c4.g: +moduloDirectorio
     
     +footer
         
