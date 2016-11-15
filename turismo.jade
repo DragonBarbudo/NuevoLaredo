@@ -8,9 +8,15 @@ include _config.jade
     
     +topbar
     +header
+    +subheader('Turismo')
     
-    section.cultura
-      .proximamente TURISMO<BR>PRÓXIMAMENTE
+    section.turismo
+      .container
+        .c12
+          slick(slides-to-show="3" autoplay="true" responsive="[{breakpoint:720,settings:{slidesToShow:1}}]")#noticiasslider
+            - for(var i = 0; i<4; i++ )
+              div
+                +moduloNota
     
     
     +footer

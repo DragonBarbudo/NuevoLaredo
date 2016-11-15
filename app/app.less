@@ -366,7 +366,9 @@ footer{
 section.noticias,
 section.prensa,
 section.gabinete,
-section.directorio{
+section.directorio,
+section.buzon,
+section.turismo{
   background: @w;
   div{
     &:nth-child(2) .fa, &:nth-child(9) .fa{color:@color1;}
@@ -403,6 +405,22 @@ aside{
       &:nth-child(2) .fa{color:@color4;}
       &:nth-child(3) .fa{color:@color5;}
       &:nth-child(4) .fa{color:@color6;}
+    }
+  }
+}
+
+section.buzon{
+  form{
+    padding: 40px 0;
+    .container{
+      margin-bottom: 10px;
+    }
+    input,textarea{
+      background: #fff;
+      padding: 5px 10px;
+      width: 100%;
+      .box-sizing(border-box);
+      border-bottom: 1px @w/1.2 solid;
     }
   }
 }
