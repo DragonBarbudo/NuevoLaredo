@@ -88,6 +88,26 @@ mixin subheader(title)
   .subheader
     h1 #{title}
     
+mixin metainfo
+  .metainfo
+    .container
+      .c
+        i.fa.fa-calendar-o
+        |  Noviembre 25, 2005
+      .c
+        i.fa.fa-folder-o
+        |  Noticia
+      .c
+        i.fa.fa-user
+        |  Autor
+      .c
+        +socialshare
+
+mixin socialshare
+  .container.tac
+    .c: .fb-share-button
+    .c: a.twitter-share-button(href="https://twitter.com/intent/tweet")
+
 mixin footer
   +accesos
   footer
@@ -97,10 +117,10 @@ mixin footer
         ul.proximos-eventos.container
           - for(var i = 0; i<4; i++ )
             li.c12.ct6.cm12
-              .container
-                .c3.g: .img(style="background-image: url(http://placehold.it/100x100)")
+              a(href="http://loremflickr.com/600/600" title="Exportan arte realizado con tambos y cubetas de lámina en la zona norte de Nuevo Laredo").container.ng-box
+                .c3.g: .img(style="background-image: url(http://loremflickr.com/100/100)")
                 .c8.g
-                  a(href="#") Exportan arte realizado con tambos y cubetas de lámina...
+                  p Exportan arte realizado con tambos y cubetas de lámina...
               
       .c4.ct6.cm12.g.sobre
         h2 Sobre tu gobierno
@@ -124,8 +144,8 @@ mixin footer
 
 
 mixin moduloNota
-  a(href="#").moduloNota.container.fluid
-    .c12.img(style="background-image:url(http://placehold.it/420x220)")
+  a(href="nota.html").moduloNota.container.fluid
+    .c12.img(style="background-image:url(http://loremflickr.com/420/220)")
     .c12.g: .title El presidente municipal se reunió con miembros del Club Rotario
     .c12.g: .date
       i.fa.fa-calendar-o
@@ -133,8 +153,8 @@ mixin moduloNota
     .c12.g: p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 
 mixin moduloGabinete
-  .moduloGabinete.container.fluid
-    .c12.img(style="background-image:url(http://placehold.it/420x420)")
+  a(href="nota.html").moduloGabinete.container.fluid
+    .c12.img(style="background-image:url(http://loremflickr.com/420/420)")
       .hover.container.middle.center
         .c
           .name Gabriel Ramirez
