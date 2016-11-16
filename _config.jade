@@ -118,7 +118,7 @@ mixin footer
           - for(var i = 0; i<4; i++ )
             li.c12.ct6.cm12
               a(href="http://loremflickr.com/600/600" title="Exportan arte realizado con tambos y cubetas de lámina en la zona norte de Nuevo Laredo").container.ng-box
-                .c3.g: .img(style="background-image: url(http://loremflickr.com/100/100)")
+                .c3.g: .img(style="background-image: url(http://loremflickr.com/100/100/people)")
                 .c8.g
                   p Exportan arte realizado con tambos y cubetas de lámina...
               
@@ -145,7 +145,7 @@ mixin footer
 
 mixin moduloNota
   a(href="nota.html").moduloNota.container.fluid
-    .c12.img(style="background-image:url(http://loremflickr.com/420/220)")
+    .c12.img(style="background-image:url(http://loremflickr.com/420/220/people)")
     .c12.g: .title El presidente municipal se reunió con miembros del Club Rotario
     .c12.g: .date
       i.fa.fa-calendar-o
@@ -153,18 +153,20 @@ mixin moduloNota
     .c12.g: p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 
 mixin moduloGabinete
-  a(href="nota.html").moduloGabinete.container.fluid
-    .c12.img(style="background-image:url(http://loremflickr.com/420/420)")
+  .moduloGabinete.container.fluid
+    a.c12.img(href="nota.html" style="background-image:url(http://loremflickr.com/420/420/tech)")
       .hover.container.middle.center
         .c
           .name Gabriel Ramirez
           .job-title Director ejecutivo
-    .c10.cm12.g
+    a(href="nota.html").c10.cm12.g
       .title Gabriel Ramirez
       p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
     .c2.cm12.g.social.tac
       a(href="#"): i.fa.fa-twitter
       a(href="#"): i.fa.fa-facebook
+      a(href="#"): i.fa.fa-linkedin
+      a(href="#"): i.fa.fa-instagram
 
 mixin moduloDirectorio
   .moduloDirectorio.container.fluid

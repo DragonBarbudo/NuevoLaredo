@@ -76,6 +76,8 @@ angular.module("ngBox",[]).directive("ngBox",["$timeout",function(a){return{rest
 	fjs.parentNode.insertBefore(js, fjs);
 } ( document, 'script', 'facebook-jssdk' ) );
 
+
+
 /* Twitter Widget */
 window.twttr = (function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0],
@@ -85,11 +87,9 @@ window.twttr = (function(d, s, id) {
   js.id = id;
   js.src = "https://platform.twitter.com/widgets.js";
   fjs.parentNode.insertBefore(js, fjs);
-
   t._e = [];
   t.ready = function(f) {
     t._e.push(f);
   };
-
   return t;
 }(document, "script", "twitter-wjs"));
