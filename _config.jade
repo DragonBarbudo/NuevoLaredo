@@ -37,20 +37,17 @@ include dw4/_dw4.jade
 - js('app/app.js')
 
 - // MENU ################################################################################
-
-//- menu('Inicio', 'index.html')
-- menu('Cultura', 'cultura.html')
-- menu('Turismo', 'turismo.html')
+- menu('Inicio', 'index.html')
+- menu('Cultura y turismo', 'cultura-y-turismo.html')
 - menu('Trámites y servicios <i class="fa fa-angle-down"></i>', '#tramites-y-servicios')
-- menu('Pago de servicios', 'pago-de-servicios.html', '#tramites-y-servicios')
-- menu('Notariales', 'notariales.html', '#tramites-y-servicios')
-- menu('Registro civil', 'registro-civil.html', '#tramites-y-servicios')
+- menu('Pago de predial', 'pago-de-predial.html', '#tramites-y-servicios', {'target':'_blank'})
+- menu('Obras públicas', 'http://nuevolaredo.gob.mx/obrasweb/', '#tramites-y-servicios', {'target':'_blank'})
+- menu('Servicios públicos', 'http://nuevolaredo.gob.mx/servweb/', '#tramites-y-servicios', {'target':'_blank'})
 - menu('Transparencia', 'http://nld.gob.mx/index.php?m=transparencia&tipo=oficios', null, {'target':'_blank'})
 - menu('Acércate <i class="fa fa-angle-down"></i>', '#acercate')
 - menu('Gabinete', 'gabinete.html', '#acercate')
 - menu('Directorio', 'directorio.html', '#acercate')
-- menu('Buzón de quejas y sugerencias', 'buzon.html', '#acercate')
-- menu('Noticias', 'noticias.html')
+- menu('Centro integral de Atención a Ciudadanos', 'atencion-a-ciudadanos.html', '#acercate')
 - menu('Sala de prensa', 'sala-de-prensa.html')
 
 
@@ -71,10 +68,15 @@ mixin topbar
             i.fa.fa-user
             span  Iniciar sesión
       .c6.ct12.cm12.redes.tar
-        a(href="http://twitter.com"): i.fa.fa-twitter
-        a(href="http://facebook.com"): i.fa.fa-facebook
-        a(href="http://youtube.com"): i.fa.fa-youtube
-        a(href="http://instagram.com"): i.fa.fa-instagram
+        .container
+          .c
+            a(href="http://twitter.com"): i.fa.fa-twitter
+            a(href="http://facebook.com"): i.fa.fa-facebook
+            a(href="http://youtube.com"): i.fa.fa-youtube
+            a(href="http://instagram.com"): i.fa.fa-instagram
+          .c.search
+            label.fa.fa-search
+            input(type="search")
 
 mixin header
   header

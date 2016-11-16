@@ -28,7 +28,6 @@
 
 
 h1, h2, h3, h4, h5{
-  .fontsans;
   font-size: 2em;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -48,7 +47,6 @@ body{
   border-bottom: 1px solid @w/1.1;
   padding: 6px 0;
   color:@g;
-  .fontsans;
   line-height: 2;
   a{
     color:@g;
@@ -71,22 +69,30 @@ body{
       }
     }
   }
+  .search{
+    input{
+      background:@w/1.1;
+      margin-left: 5px;
+      .border-radius(2px);
+      padding: 0 4px;
+    }
+  }
 }
 
 header{
   padding: 20px 0 0 0;
   position: relative;
-  .logo{position: relative;z-index: 1;}
+  .logo{position: relative;z-index: 1; img{max-width: 220px;}}
   &:before{
     content:"";
     background-image:url(img/masmodernidad.jpg);
     background-repeat: no-repeat;
     background-position: right top;
     background-size: contain;
-    width: 400px;
-    height: 200px;
+    width: 300px;
+    height: 150px;
     position: absolute;
-    right: 0;bottom: 0;
+    right: 0;top: 0;
     z-index: 0;
     @media @tablet{
       width: 250px;
@@ -139,7 +145,11 @@ header{
           display: block;
           padding: 15px 10px;
           text-decoration: none;
-          color:@g;
+          color:@main;
+          &:hover{
+            background: @main;
+            color:@w;
+          }
         }
         //Submenu
         ul{
@@ -154,7 +164,6 @@ header{
           }
         }
         &:hover{
-          border-bottom:2px solid @main;
           ul{
             display: block;
           }
@@ -186,7 +195,7 @@ header{
   color:@g;
   font-size: 1em;
   text-align: center;
-  h1{.fontcond; text-transform: uppercase; font-weight: lighter;}
+  h1{ text-transform: uppercase; font-weight: lighter;}
 }
 
 
@@ -271,12 +280,28 @@ section.sliders{
 }
 
 
+section.unete{
+  padding: 20px 0;
+  .background-image(linear-gradient(@sec, @sec/1.1));
+  color:@w;
+  .field{
+    background: @w;
+    .border-radius(4px);
+    input{
+      width: 100%;
+      padding: 10px;
+      color:@g;
+      text-align: center;
+    }
+    .button{background: @main; color: #fff; margin: 2px 1%; width: 98%;}
+  }
+}
+
 section.ultimas-noticias{
   padding-top: 40px;
   padding-bottom: 40px;
   background: @w;
   p{
-    .fontsans;
     color:@g;
     font-weight: lighter;
   }
@@ -288,6 +313,66 @@ section.ultimas-noticias{
     }
   }
 }
+
+
+.accesos-directos{
+  @lbsize:44px;
+  position: fixed;
+  z-index: 9999;
+  top:45%;
+  left: 0;
+  .fa{color:@w; font-size: 1.4em;}
+  .telefonos{
+    background: @color1;
+    ul{background:@color1/1.1;bottom:0; a:hover{background: @color1;}}
+  }
+  .webs{
+    background: @color2;
+    ul{background:@color2/1.2;top:0; a:hover{background: @color2;}}
+  }
+  label{
+    width: @lbsize;
+    height: @lbsize;
+    text-align: center;
+    line-height: 2;
+    position: relative;
+    z-index: 99999;
+  }
+  ul{
+    width: @lbsize*6;
+    position: absolute;
+    left: -(@lbsize*6);
+    .opacity(0);
+    list-style: none;
+    .transition(.5s);
+    z-index: 0;
+    li{
+      border-bottom: 1px solid rgba(0,0,0,0.5);
+      a{
+        display: block;
+        padding: 10px 20px;
+        color:@w;
+        text-decoration: none;
+        .sub{
+          font-size: 1.2em;
+        }
+        .tit{
+          .opacity(0.8);
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+  input:checked+label+ul{
+    left: @lbsize;
+    .opacity(1);
+    .transition(.5s);
+  }
+  input:checked+label:before{
+    content:"\f00d";
+  }
+}
+
 
 
 footer{
@@ -316,7 +401,6 @@ footer{
   .end{
     background: @main/1.4;
     border-top: 2px solid @main/1.6;
-    .fontcond;
     font-size: 0.9em;
     color:@w;
     padding: 30px 0;
