@@ -89,6 +89,7 @@ mixin subheader(title)
     h1 #{title}
     
 mixin footer
+  +accesos
   footer
     .container
       .c4.ct12.cm12.g
@@ -160,3 +161,35 @@ mixin moduloDirectorio
         |  <strong>Palacio Municipal 1er. Piso</strong>
         br
         | Morelos No. 645 entre Hidalgo y Juárez, Zona Centro
+
+mixin accesos
+  .accesos-directos
+    .telefonos
+      input(type="checkbox").nom.nod.not#check-telefonos
+      label.fa.fa-phone(for="check-telefonos")
+      ul
+        li: a(href="tel:066")
+          .sub Emergencias
+          .tit Tel: 066
+        li: a(href="tel:9557020")
+          .sub Protección civil
+          .tit Tel: 955-7020
+        li: a(href="tel:072")
+          .sub Quejas y denuncias
+          .tit Tel: 072
+    .webs
+      input(type="checkbox").nom.nod.not#check-webs
+      label.fa.fa-share-square-o(for="check-webs")
+      ul
+        li: a(href="http://www.reynosa.gob.mx/gobierno/" target="_blank")
+          .sub Gobierno
+          .tit Funcionarios municipales
+        li: a(href="directorio.html" target="_blank")
+          .sub Directorio
+          .tit Dependencias municipales
+        li: a(href="http://nuevolaredo.gob.mx/ciac-admin/" target="_blank")
+          .sub CIAC
+          .tit Centro Integral de Atención Ciudadana
+        li: a(href="http://difnuevolaredo.gob.mx/" target="blank")
+          .sub DIF
+          .tit Nuevo Laredo

@@ -2064,6 +2064,7 @@ section.ultimas-noticias #noticiasslider .slick-slide {
   line-height: 2;
   position: relative;
   z-index: 99999;
+  cursor: pointer;
 }
 .accesos-directos ul {
   width: 264px;
