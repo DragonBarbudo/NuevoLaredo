@@ -35,8 +35,8 @@ include _config.jade
             h2 Únete a nuestra comunidad
             p Suscríbete al boletín oficial y continua recibiendo información de valor.
           .c12.field
-            form.container
-              .c10.ct8.cm12: input(type="email" placeholder="Escribe tu correo electrónico")
+            form.container(ng-submit="suscribirme_mail()")
+              .c10.ct8.cm12: input(type="mail" ng-model="mail" placeholder="Escribe tu correo electrónico")
               .c2.ct4.cm12: button(type="submit").button.button-rounded Suscribirme
     
       section.ultimas-noticias

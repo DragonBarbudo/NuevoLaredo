@@ -30,18 +30,25 @@ app.run(function(){
 });
 
 
-app.controller('MainCtrl', function($scope, apis){
+app.controller('MainCtrl', function($scope, apis, $location){
   $scope.prensa;
   $scope.noticias;
   $scope.eventos;
   $scope.gabinete;
   $scope.directorio;
 
+  var mail =  $location.path();
+  $scope.mail = mail.replace("/", "");
+
   apis.prensa().then(function(result){ $scope.prensa = result.data; });
   apis.noticias().then(function(result){ $scope.noticias = result.data; });
   apis.eventos().then(function(result){ $scope.eventos = result.data; });
   apis.gabinete().then(function(result){ $scope.gabinete = result.data; });
   apis.directorio().then(function(result){ $scope.directorio = result.data; });
+
+  $scope.suscribirme_mail = function(){
+    window.location ='suscripcion.html#'+$scope.mail;
+  }
 
 });
 
