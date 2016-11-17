@@ -123,10 +123,10 @@ mixin footer
         ul.proximos-eventos.container
           div(ng-repeat="item in eventos")
             li.c12.ct6.cm12
-              a(ng-href="{{item.img}}" ng-attr-title="<h2>{{item.titulo}}</h2>{{item.contenido}}").container.ng-box
-                .c3.g: .img(ng-style="{ 'background-image':'url('+item.img+')' }")
+              a(ng-href="{{item.gsx$img.$t}}" ng-attr-title="<h2>{{item.gsx$titulo.$t}}</h2>{{item.gsx$contenido.$t}}").container.ng-box
+                .c3.g: .img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
                 .c8.g
-                  p {{item.titulo}}
+                  p {{item.gsx$titulo.$t}}
               
       .c4.ct6.cm12.g.sobre
         h2 Sobre tu gobierno
@@ -161,37 +161,37 @@ mixin moduloNota
       | ...
 mixin moduloGabinete
   .moduloGabinete.container.fluid
-    a.c12.img(href="nota.html" ng-style="{ 'background-image':'url('+item.img+')' }")
+    a.c12.img(href="nota.html" ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
       .hover.container.middle.center
         .c
-          .name {{item.nombre}}
-          .job-title {{item.titulo}}
+          .name {{item.gsx$nombre.$t}}
+          .job-title {{item.gsx$titulo.$t}}
     a(href="nota.html").c10.cm12.g
-      .title {{item.nombre}}
+      .title {{item.gsx$nombre.$t}}
       p.description 
-        | {{item.contenido | htmlToPlaintext | limitTo:90}}
+        | {{item.gsx$contenido.$t | htmlToPlaintext | limitTo:90}}
         | ...
     .c2.cm12.g.social.tac
-      a(ng-href="{{item.twitter}}" ng-if="item.twitter"): i.fa.fa-twitter
-      a(ng-href="{{item.facebook}}" ng-if="item.facebook"): i.fa.fa-facebook
-      a(ng-href="{{item.linkedin}}" ng-if="item.linkedin"): i.fa.fa-linkedin
-      a(ng-href="{{item.instagram}}" ng-if="item.instagram"): i.fa.fa-instagram
+      a(ng-href="{{item.gsx$twitter.$t}}" ng-if="item.gsx$twitter.$t"): i.fa.fa-twitter
+      a(ng-href="{{item.gsx$facebook.$t}}" ng-if="item.gsx$facebook.$t"): i.fa.fa-facebook
+      a(ng-href="{{item.gsx$linkedin.$t}}" ng-if="item.gsx$linkedin.$t"): i.fa.fa-linkedin
+      a(ng-href="{{item.gsx$instagram.$t}}" ng-if="item.gsx$instagram.$t"): i.fa.fa-instagram
 
 mixin moduloDirectorio
   .moduloDirectorio.container.fluid
     .c
       .what {{item.nombre}}
-      .mail: a(ng-href="mailto:{{item.correo}}")
+      .mail: a(ng-href="mailto:{{item.gsx$correo.$t}}")
         i.fa.fa-envelope-o
-        |  {{item.correo}}
+        |  {{item.gsx$correo.$t}}
       .phone
         i.fa.fa-phone
-        |  {{item.telefono}}
+        |  {{item.gsx$telefono.$t}}
       .addr
         i.fa.fa-map-marker
-        |  <strong>{{item.direccion_1}}</strong>
+        |  <strong>{{item.gsx$direccion1.$t}}</strong>
         br
-        | {{item.direccion_2}}
+        | {{item.gsx$direccion2.$t}}
 
 mixin accesos
   .accesos-directos

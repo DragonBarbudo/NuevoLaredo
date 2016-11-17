@@ -42,9 +42,9 @@ app.controller('MainCtrl', function($scope, apis, $location){
 
   apis.prensa().then(function(result){ $scope.prensa = result.data; });
   apis.noticias().then(function(result){ $scope.noticias = result.data; });
-  apis.eventos().then(function(result){ $scope.eventos = result.data; });
-  apis.gabinete().then(function(result){ $scope.gabinete = result.data; });
-  apis.directorio().then(function(result){ $scope.directorio = result.data; });
+  apis.eventos().then(function(result){ $scope.eventos = result.data.feed.entry; });
+  apis.gabinete().then(function(result){ $scope.gabinete = result.data.feed.entry; });
+  apis.directorio().then(function(result){ $scope.directorio = result.data.feed.entry; });
 
   $scope.suscribirme_mail = function(){
     window.location ='suscripcion.html#'+$scope.mail;
@@ -103,7 +103,8 @@ app.factory('apis', function($q, $http){
     var deferred = $q.defer();
     $http({
       method    : "GET",
-      url       : "data/eventos.json",
+      //url       : "data/eventos.json",
+      url        : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1aRSdMP9EvlDHt7S7kkDoc2WGob-CxIMocY9EkpYyXR8/od6/public/values?alt=json",
       headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
     }).then(function(result){
       deferred.resolve(result);
@@ -115,7 +116,8 @@ app.factory('apis', function($q, $http){
     var deferred = $q.defer();
     $http({
       method    : "GET",
-      url       : "data/gabinete.json",
+      //url       : "data/gabinete.json",
+      url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1CmY-2-blJMcBpstS3sVrDdMtUsUqMo3IZvwNJerHvKI/od6/public/values?alt=json",
       headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
     }).then(function(result){
       deferred.resolve(result);
@@ -127,7 +129,8 @@ app.factory('apis', function($q, $http){
     var deferred = $q.defer();
     $http({
       method    : "GET",
-      url       : "data/directorio.json",
+      //url       : "data/directorio.json",
+      url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1UoBayKCH9DSJeOkwnNE07apiBK6PwtvuTjwTb5wxTfg/od6/public/values?alt=json",
       headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
     }).then(function(result){
       deferred.resolve(result);
