@@ -8,9 +8,11 @@ include _config.jade
     
     +topbar
     +header
-    +subheader('Pago de predial')
-    
-    
-    +footer
+    div(ng-controller="MainCtrl")
+      +subheader('Pago de predial')
+      .container: .c6.o3.proximamente
+        h2 PRÓXIMAMENTE
+      
+      +footer
     +scripts
     

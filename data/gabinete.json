@@ -1,0 +1,67 @@
+[
+  {
+    "id"          : "6",
+    "nombre"      : "Gabriel Ramírez",
+    "titulo"      : "Director Ejecutivo",
+    "img"         : "data/gabinete/6.jpg",
+    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
+    "facebook"    : "#",
+    "twitter"    : "#",
+    "linkedin"    : "#",
+    "instagram"    : "#"
+  },
+  {
+    "id"          : "5",
+    "nombre"      : "Gabriel Ramírez",
+    "titulo"      : "Director Ejecutivo",
+    "img"         : "data/gabinete/6.jpg",
+    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
+    "facebook"    : "#",
+    "twitter"    : "#",
+    "linkedin"    : "#",
+    "instagram"    : "#"
+  },
+  {
+    "id"          : "4",
+    "nombre"      : "Gabriel Ramírez",
+    "titulo"      : "Director Ejecutivo",
+    "img"         : "data/gabinete/6.jpg",
+    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
+    "facebook"    : "#",
+    "twitter"    : "#",
+    "linkedin"    : "#",
+    "instagram"    : "#"
+  },
+  {
+    "id"          : "3",
+    "nombre"      : "Gabriel Ramírez",
+    "titulo"      : "Director Ejecutivo",
+    "img"         : "data/gabinete/6.jpg",
+    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
+    "facebook"    : "#",
+    "twitter"    : "#",
+    "linkedin"    : "#",
+    "instagram"    : "#"
+  },
+  {
+    "id"          : "2",
+    "nombre"      : "Gabriel Ramírez",
+    "titulo"      : "Director Ejecutivo",
+    "img"         : "data/gabinete/6.jpg",
+    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
+    "facebook"    : "#",
+    "twitter"    : "#",
+    "linkedin"    : "#",
+    "instagram"    : "#"
+  },
+  {
+    "id"          : "1",
+    "nombre"      : "Gabriel Ramírez",
+    "titulo"      : "Director Ejecutivo",
+    "img"         : "data/gabinete/6.jpg",
+    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
+    "facebook"    : "#",
+    "twitter"    : "#"
+  }
+
+]

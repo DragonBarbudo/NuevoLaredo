@@ -1,0 +1,31 @@
+[
+  {
+    "id"          : "4",
+    "titulo"      : "Anuncian cierre de vialidades frente a presidencia municipal",
+    "fecha"       : "Noviembre 16, 2016",
+    "img"         : "data/noticias/4.jpg",
+    "contenido"   : "<p>Con motivo de la celebración del aniversario 106 de la Revolución Mexicana, este domingo 20 de noviembre, para la realización del desfile deportivo, la Dirección de Tránsito y Vialidad anuncia el cierre de vialidades cercanas a la presidencia municipal a partir de las 9 de la noche del viernes 18 de noviembre. </p><p>Las vialidades a cerrar son Héroe de Nacataz entre Ocampo y Juárez, y la avenida Vicente Guerrero, en el tramo de Madero y Maclovio Herrera. Personal de Servicios Públicos Primarios, trabajará en la instalación de un templete y colocación de adornos alusivos a la fecha. Como alternativas viales hacia el poniente estarán las calles Independencia, Bolívar y Washington, para el oriente continuará la vialidad por Madero y Maclovio Herrera, hacia el sur de la ciudad, estarán las avenidas Morelos y Reynosa. </p><p>Se solicita a los automovilistas extremar precauciones y anticiparse a las rutas que se están brindando como alternativas. </p>"
+  },
+  {
+    "id"          : "3",
+    "titulo"      : "Invitan a ExpoRevolución del Buen Fín",
+    "fecha"       : "Noviembre 2, 2016",
+    "img"         : "data/noticias/3.jpg",
+    "contenido"   : "<p>La Secretaría de Desarrollo Económico y Empleo en apoyo al programa nacional El Buen fin -que se llevará a cabo en el país del 18 al 21 de noviembre-, participa con la Expo Revolución del Buen Fin en la Explanada Independencia de la plaza Hidalgo, este 18 y 19 de noviembre a partir de las 12 del día hasta las 7 de la tarde.</p><p>Con el fin de reactivar la economía local y fomentar el consumo, pero sobre todo mejorar la calidad de vida de todas las familias, esta exposición contará con comerciantes de diferentes giros, entre ellos, repostería, gastronomía, globoflexia, artesanías, joyería, ropa, entre otros, además de exhibiciones de las diferentes agencias de autos que se pondrán al alcance de los ciudadanos para que aprovechen las ofertas del buen fin. </p>"
+  },
+  {
+    "id"          : "2",
+    "titulo"      : "Todo listo para la Olimpiada Estatal de Natación",
+    "fecha"       : "Octubre 25, 2016",
+    "img"         : "data/noticias/2.jpg",
+    "contenido"   : "<p>Nuevo Laredo será sede de la Olimpiada Estatal de Natación de este viernes 18 al lunes 21 de noviembre en las instalaciones del Centro Acuático &quot;Villas&quot;, ubicado en la colonia El Nogal. Se espera la llegada de más de 120 nadadores procedentes de todo el Estado, de los cuales 15 representarán a la ciudad de Nuevo Laredo. </p><p>Las categorías que se incluirán dentro de la Olimpiada son 11 y 12 años, 13-14 años, 15-16 años, 17 y 18 años en las disciplinas de nado de pecho, dorso, mariposa y estilo libre, con distancias de 100 a los 1,500 metros. </p><p>La inauguración del evento será el sábado 19 de noviembre a las 9 de la mañana y la entrada será completamente gratuita. </p>"
+  },
+  {
+    "id"          : "1",
+    "titulo"      : "Estrenamos sitio web",
+    "fecha"       : "Octubre 16, 2016",
+    "img"         : "data/noticias/1.jpg",
+    "contenido"   : "<p>Te invitamos a que navegues por el nuevo sitio web de Nuevo Laredo: <a href='http://www.nld.org.mx' target='_blank'>www.nl.org.mx</a></p>"
+  }
+
+]

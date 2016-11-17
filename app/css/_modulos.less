@@ -1,0 +1,122 @@
+.moduloNota{
+  padding: 10px;
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .img{
+    background-size: cover;
+    min-height: 220px;
+    background-position: center;
+  }
+  .title{
+    font-size: 0.9em;
+    color:@b;
+    margin-top: 5px;
+  }
+  .date{
+    color:@sec;
+    font-size: 0.8em;
+    margin-top: 5px;
+    i{color:@g;}
+  }
+  p.description{
+    color:@g;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+}
+
+
+
+.moduloGabinete{
+  padding: 10px;
+  background: #fff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  .img{
+    background-size: cover;
+    min-height: 420px;
+    background-position: center;
+    .hover{
+      background: rgba(0,0,0,0.8);
+      color:@w;
+      height: 100%;
+      .tac;
+      font-size:1.4em;
+      .name{color:@w; font-size: 1.4em;}
+      .job-title{color:@g;}
+      .opacity(0);
+      .transition(.5s);
+    }
+  }
+  .title{
+    font-size: 0.9em;
+    color:@b;
+    margin-top: 5px;
+  }
+  .date{
+    color:@sec;
+    font-size: 0.8em;
+    margin-top: 5px;
+    i{color:@g;}
+  }
+  p.description{
+    color:@g;
+    font-size: 0.8em;
+    margin-top: 5px;
+  }
+  &:hover{
+    .img{
+      .hover{
+        .opacity(1);
+        font-size: 1em;
+        .transition(.5s);
+      }
+    }
+  }
+  .social{
+    a{
+      text-align: center;
+      display: inline-block;
+      width: 28px; height: 28px;
+      .background-image(linear-gradient(@w*1.2, @w));
+      .border-radius(50%);
+      color:@g;
+      border: 1px solid @w/1.2;
+      line-height: 1.6;
+      margin: 4px;
+      &:hover{
+        .fa-twitter{color:#55ACEE !important; }
+        .fa-facebook{color:#3C5A96 !important; }
+        .fa-linkedin{color:#1C7FB6 !important; }
+        .fa-instagram{color:#E64159 !important; }
+      }
+    }
+  }
+}
+
+
+.moduloDirectorio{
+  padding: 10px;
+  background: #fff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid @g*1.1;
+  div{margin: 5px 0;}
+  .what{ color:@g; font-size: 1.4em; }
+  .mail,.phone{
+    a{
+      color:@sec;
+    }
+  }
+  .addr{
+    font-size: 0.8em;
+    strong{font-weight: bold; color:@g; font-size: 1.2em;}
+  }
+  .fa{
+    font-size: 1.2em;
+    width: 40px;
+    text-align: center;
+    color:@g;
+  }
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "id"          : "6",
+    "nombre"      : "Secretaría de Atención",
+    "correo"      : "secretaria@nld.org.mx",
+    "telefono"    : "555-555-55",
+    "direccion_1" : "Av Vicente Guerrero 1500",
+    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
+  },
+  {
+    "id"          : "5",
+    "nombre"      : "Secretaría de Atención",
+    "correo"      : "secretaria@nld.org.mx",
+    "telefono"    : "555-555-55",
+    "direccion_1" : "Av Vicente Guerrero 1500",
+    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
+  },
+  {
+    "id"          : "4",
+    "nombre"      : "Secretaría de Atención",
+    "correo"      : "secretaria@nld.org.mx",
+    "telefono"    : "555-555-55",
+    "direccion_1" : "Av Vicente Guerrero 1500",
+    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
+  },
+  {
+    "id"          : "3",
+    "nombre"      : "Secretaría de Atención",
+    "correo"      : "secretaria@nld.org.mx",
+    "telefono"    : "555-555-55",
+    "direccion_1" : "Av Vicente Guerrero 1500",
+    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
+  },
+  {
+    "id"          : "2",
+    "nombre"      : "Secretaría de Atención",
+    "correo"      : "secretaria@nld.org.mx",
+    "telefono"    : "555-555-55",
+    "direccion_1" : "Av Vicente Guerrero 1500",
+    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
+  },
+  {
+    "id"          : "1",
+    "nombre"      : "Secretaría de Atención",
+    "correo"      : "secretaria@nld.org.mx",
+    "telefono"    : "555-555-55",
+    "direccion_1" : "Av Vicente Guerrero 1500",
+    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
+  }
+
+]

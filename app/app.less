@@ -1,6 +1,8 @@
 @import '../dw4/_dw4';
+@import 'css/_generals';
+@import 'css/_modulos';
+@import 'css/_header';
 
-@import '_modulos';
 
 /* WIDTHS */
 @containerWidth: 1200px;
@@ -23,8 +25,7 @@
 /* FONTS */
 
 .font{ font-family: 'Roboto Slab', serif; }
-.fontsans{ font-family: 'Roboto', sans-serif; }
-.fontcond{ font-family: 'Roboto Condensed', sans-serif; }
+
 
 
 h1, h2, h3, h4, h5{
@@ -79,114 +80,7 @@ body{
   }
 }
 
-header{
-  padding: 20px 0 0 0;
-  position: relative;
-  .logo{position: relative;z-index: 1; img{max-width: 220px;}}
-  &:before{
-    content:"";
-    background-image:url(img/masmodernidad.jpg);
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-size: contain;
-    width: 300px;
-    height: 150px;
-    position: absolute;
-    right: 0;top: 0;
-    z-index: 0;
-    @media @tablet{
-      width: 250px;
-      height: 100px;
-      top: 0; bottom: auto;
-    }
-    @media @mobile{
-      width: 200px;
-      height: 80px;
-      top: 0; bottom: auto;
-    }
-  }
-  &:after{
-    content:"";
-    background-image:url(img/squares.png);
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-size: contain;
-    width: 250px;
-    height: 100px;
-    position: absolute;
-    left: 0;top: 0;
-    @media @tablet{
-      width: 200px;
-      height: 80px;
-    }
-    @media @mobile{
-      width: 100px;
-      height: 40px;
-    }
-  }
 
-
-  nav{
-    width: 100%;
-    margin-top: 20px;
-    text-transform: uppercase;
-    ul{
-      .container;
-      list-style: none;
-      li{
-        .tac;
-        .c;
-        position: relative;
-        border-bottom:2px solid @w;
-        font-size: 0.8em;
-        .box-sizing(border-box);
-        @media @tablet{ .c6; }
-        @media @mobile{ .c12; }
-        a{
-          display: block;
-          padding: 15px 10px;
-          text-decoration: none;
-          color:@main;
-          &:hover{
-            color:@sec;
-          }
-        }
-        //Submenu
-        ul{
-          display: none;
-          position: absolute;
-          z-index: 1;
-          .container;
-          .fluid;
-
-          li{
-            .c12;
-            &:first-child{margin-top: 2px;}
-            a{
-              background: #fff;
-            }
-          }
-        }
-        &:hover{
-          ul{
-            display: block;
-          }
-        }
-        .fa{
-          position: absolute;
-          width: 100%;
-          left: 0;
-          bottom: 4px;
-          text-align: center;
-        }
-        &:hover{
-          border-color: @main;
-        }
-      }
-    }
-  }
-
-}
 
 .subheader{
   .background-image(linear-gradient(@w,@w*1.2, ));
@@ -208,29 +102,6 @@ header{
 }
 
 
-/* SLICK SETTINGS */
-.slick-slide:focus{outline:none;}
-.slick-arrow{
-  position: absolute;
-  top: 45%;
-  z-index: 10;
-  font-size: 0;
-  width: 40px;
-  text-align: center;
-  color:@w;
-  &.slick-prev{
-    left: 10px;
-    &:before{content:"\f053";}
-  }
-  &.slick-next{
-    right: 10px;
-    &:before{content:"\f054";}
-  }
-  &:before{
-    font-family: FontAwesome;
-    font-size: 20px;
-  }
-}
 
 section.sliders{
   @height: 480px;
@@ -336,11 +207,11 @@ section.ultimas-noticias{
   .fa{color:@w; font-size: 1.4em;}
   .telefonos{
     background: @color1;
-    ul{background:@color1/1.1;bottom:0; a:hover{background: @color1;}}
+    ul{background:@color1/1.1;bottom:@lbsize; a:hover{background: @color1;}}
   }
   .webs{
     background: @color2;
-    ul{background:@color2/1.2;top:0; a:hover{background: @color2;}}
+    ul{background:@color2/1.2;top:@lbsize; a:hover{background: @color2;}}
   }
   label{
     width: @lbsize;
@@ -433,6 +304,7 @@ footer{
         li{
           border-left: 1px solid @sec;
           padding-left: 10px;
+          &:first-child{display: none;}
           ul{
             margin-left: 10px;
           }
@@ -458,7 +330,7 @@ footer{
 
 
 
-.proximamente{ font-size: 4em; color:@g; padding: 100px 0; .tac;}
+
 
 section.noticias,
 section.prensa,
@@ -522,16 +394,7 @@ section.buzon{
   }
 }
 
-#swipebox-overlay{
-  background: rgba(61, 165, 216, 0.8);
-  #swipebox-bottom-bar, #swipebox-top-bar{
-    background:@main;
-  }
-  #swipebox-top-bar{
-    transform: translate3d(0,50px,0) !important;
-    padding: 40px 0 80px 0;
-  }
-}
+
 
 .nota{
   p{
@@ -540,4 +403,14 @@ section.buzon{
     strong{ color:@b; }
   }
   padding: 40px 0;
+  .notenav{
+    padding: 20px 0;
+  }
+}
+
+
+
+.otros{
+  padding: 40px;
+  .container{.fluid;}
 }

@@ -8,15 +8,15 @@ include _config.jade
     
     +topbar
     +header
-    +subheader('Directorio')
-    
-    section.directorio
+    div(ng-controller="MainCtrl")
+      +subheader('Directorio')
+      
+      section.directorio
 
-      .container
-        - for(var i=0;i<12;i++)
-          .c4.ct6.cm10.om1.g: +moduloDirectorio
-    
-    +footer
-        
+        .container
+          .c4.ct6.cm10.om1.g(ng-repeat="item in directorio"): +moduloDirectorio
+      
+      +footer
+          
     +scripts
     

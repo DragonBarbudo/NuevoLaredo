@@ -1,0 +1,27 @@
+[
+  {
+    "id"          : "4",
+    "titulo"      : "Próxima reunion de Vecinos de Nuevo Laredo",
+    "img"         : "data/eventos/4.jpg",
+    "contenido"   : "<p>Lugar: Plaza Cívica</p><p>Fecha: 28 de Noviembre de 2016</p><p>Requisitos: Credencia vigente de INE</p>"
+  },
+  {
+    "id"          : "3",
+    "titulo"      : "Próxima reunion de Vecinos de Nuevo Laredo",
+    "img"         : "data/eventos/2.jpg",
+    "contenido"   : "<p>Lugar: Plaza Cívica</p><p>Fecha: 28 de Noviembre de 2016</p><p>Requisitos: Credencia vigente de INE</p>"
+  },
+  {
+    "id"          : "1",
+    "titulo"      : "Visita del Presidente de la República",
+    "img"         : "data/eventos/1.jpg",
+    "contenido"   : "<p>Lugar: Plaza Cívica</p><p>Fecha: 20 de Noviembre de 2016</p>"
+  },
+  {
+    "id"          : "1",
+    "titulo"      : "Éxito en la reunión 5 de los Vecinos de Nuevo Laredo",
+    "img"         : "data/eventos/3.jpg",
+    "contenido"   : "<p>Lugar: Plaza Cívica</p><p>Fecha: 28 de Octubre de 2016</p>"
+  }
+
+]

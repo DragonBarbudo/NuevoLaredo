@@ -8,32 +8,32 @@ include _config.jade
     
     +topbar
     +header
-    
-    +subheader('Sala de prensa')
-    
-    section.prensa
-      .container
-          .c9.cm12.g
-            .container
-              - for(var i=0;i<6;i++)
-                .c6.ct12.cm12.g: +moduloNota
+    div(ng-controller="MainCtrl")
+      +subheader('Sala de prensa')
       
-          aside.c3.cm12.g
-            h2 Artículos recientes
-            ul
-              - for(var i=0;i<4;i++)
-                li: a(href="#")
-                  i.fa.fa-file-o
-                  |  Exportan arte realizado con tambos y cubetas de lámina
-            h2 Categorías
-            ul
-              - for(var i=0;i<4;i++)
-                li: a(href="#")
-                  i.fa.fa-caret-right
-                  |  Categorías
+      section.prensa
+        .container
+            .c9.cm12.g
+              .container
+                - for(var i=0;i<6;i++)
+                  .c6.ct12.cm12.g: +moduloNota
         
-    
-    +footer
+            aside.c3.cm12.g
+              h2 Artículos recientes
+              ul
+                - for(var i=0;i<4;i++)
+                  li: a(href="#")
+                    i.fa.fa-file-o
+                    |  Exportan arte realizado con tambos y cubetas de lámina
+              h2 Categorías
+              ul
+                - for(var i=0;i<4;i++)
+                  li: a(href="#")
+                    i.fa.fa-caret-right
+                    |  Categorías
+          
+      
+      +footer
         
     +scripts
     

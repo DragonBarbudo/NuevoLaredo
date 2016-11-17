@@ -8,16 +8,16 @@ include _config.jade
     
     +topbar
     +header
-    +subheader('Gabinete')
-    section.gabinete
-      .container: .c6.o3: +moduloGabinete
-      .container
-        - for(var i=0;i<6;i++)
-          .c4.cm6.g: +moduloGabinete
-    
-    
-    
-    +footer
+    div(ng-controller="MainCtrl")
+      +subheader('Gabinete')
+      section.gabinete
+        //.container: .c6.o3: +moduloGabinete
+        .container
+          .c4.cm6.g(ng-repeat="item in gabinete"): +moduloGabinete
+      
+      
+      
+      +footer
         
     +scripts
     

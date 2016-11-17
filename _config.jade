@@ -11,8 +11,8 @@ include dw4/_dw4.jade
 - css('https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/css/tooltipster.min.css')
 - css('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css')
 - css('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
-
-- css('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed|Roboto+Slab')
+- css('https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css')
+- css('https://fonts.googleapis.com/css?family=Roboto+Slab')
 
 
 - css('app/app.css')
@@ -29,25 +29,30 @@ include dw4/_dw4.jade
 - js('https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/angular-slick-carousel/3.1.5/angular-slick.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.3.3/angular-google-maps.js')
 - js('https://cdn.rawgit.com/rprovost/ng-backstretch/master/dist/ng-backstretch.min.js')
 - js('https://cdn.rawgit.com/novayagazeta-app/angular-swipebox/master/dist/angular-swipebox.min.js')
 - js('https://cdn.rawgit.com/nmccready/angular-simple-logger/master/dist/angular-simple-logger.light.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js')
+
 
 - js('app/app.js')
 
 - // MENU ################################################################################
+- menu('<img src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo" class="fluid" />', 'index.html', null, {"class":"logo-inside"})
 - menu('Inicio', 'index.html')
 - menu('Cultura y turismo', 'cultura-y-turismo.html')
 - menu('Trámites y servicios <i class="fa fa-angle-down"></i>', '#tramites-y-servicios')
-- menu('Pago de predial', 'pago-de-predial.html', '#tramites-y-servicios', {'target':'_blank'})
+- menu('Pago de predial', 'pago-de-predial.html', '#tramites-y-servicios')
 - menu('Obras públicas', 'http://nuevolaredo.gob.mx/obrasweb/', '#tramites-y-servicios', {'target':'_blank'})
 - menu('Servicios públicos', 'http://nuevolaredo.gob.mx/servweb/', '#tramites-y-servicios', {'target':'_blank'})
 - menu('Transparencia', 'http://nld.gob.mx/index.php?m=transparencia&tipo=oficios', null, {'target':'_blank'})
 - menu('Acércate <i class="fa fa-angle-down"></i>', '#acercate')
 - menu('Gabinete', 'gabinete.html', '#acercate')
 - menu('Directorio', 'directorio.html', '#acercate')
-- menu('Centro integral de Atención a Ciudadanos', 'atencion-a-ciudadanos.html', '#acercate')
+- menu('Centro integral de Atención a Ciudadanos', 'http://nuevolaredo.gob.mx/ciac-admin/', '#acercate', {'target':'_blank'})
 - menu('Sala de prensa', 'sala-de-prensa.html')
 
 
@@ -74,15 +79,16 @@ mixin topbar
             a(href="http://facebook.com"): i.fa.fa-facebook
             a(href="http://youtube.com"): i.fa.fa-youtube
             a(href="http://instagram.com"): i.fa.fa-instagram
-          .c.search
+          //.c.search
             label.fa.fa-search
             input(type="search")
 
 mixin header
   header
     .container: .c.tac.logo: a(href="index.html"): img(src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo")
+    .masmodernidad: img(src="app/img/masmodernidad.png", alt="Más modernidad")
     +menu
-    
+    .menuBtn: i.fa.fa-bars
     
 mixin subheader(title)
   .subheader
@@ -115,12 +121,12 @@ mixin footer
       .c4.ct12.cm12.g
         h2 Próximos eventos
         ul.proximos-eventos.container
-          - for(var i = 0; i<4; i++ )
+          div(ng-repeat="item in eventos")
             li.c12.ct6.cm12
-              a(href="http://loremflickr.com/600/600" title="Exportan arte realizado con tambos y cubetas de lámina en la zona norte de Nuevo Laredo").container.ng-box
-                .c3.g: .img(style="background-image: url(http://loremflickr.com/100/100/people)")
+              a(ng-href="{{item.img}}" ng-attr-title="<h2>{{item.titulo}}</h2>{{item.contenido}}").container.ng-box
+                .c3.g: .img(ng-style="{ 'background-image':'url('+item.img+')' }")
                 .c8.g
-                  p Exportan arte realizado con tambos y cubetas de lámina...
+                  p {{item.titulo}}
               
       .c4.ct6.cm12.g.sobre
         h2 Sobre tu gobierno
@@ -145,44 +151,47 @@ mixin footer
 
 mixin moduloNota
   a(href="nota.html").moduloNota.container.fluid
-    .c12.img(style="background-image:url(http://loremflickr.com/420/220/people)")
-    .c12.g: .title El presidente municipal se reunió con miembros del Club Rotario
+    .c12.img(ng-style="{ 'background-image':'url('+item.img+')' }")
+    .c12.g: .title {{item.titulo}}
     .c12.g: .date
       i.fa.fa-calendar-o
-      |  Noviembre 25, 2005
-    .c12.g: p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-
+      |  {{ item.fecha }}
+    .c12.g: p.description 
+      | {{item.contenido | htmlToPlaintext | limitTo:90}}
+      | ...
 mixin moduloGabinete
   .moduloGabinete.container.fluid
-    a.c12.img(href="nota.html" style="background-image:url(http://loremflickr.com/420/420/tech)")
+    a.c12.img(href="nota.html" ng-style="{ 'background-image':'url('+item.img+')' }")
       .hover.container.middle.center
         .c
-          .name Gabriel Ramirez
-          .job-title Director ejecutivo
+          .name {{item.nombre}}
+          .job-title {{item.titulo}}
     a(href="nota.html").c10.cm12.g
-      .title Gabriel Ramirez
-      p.description  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      .title {{item.nombre}}
+      p.description 
+        | {{item.contenido | htmlToPlaintext | limitTo:90}}
+        | ...
     .c2.cm12.g.social.tac
-      a(href="#"): i.fa.fa-twitter
-      a(href="#"): i.fa.fa-facebook
-      a(href="#"): i.fa.fa-linkedin
-      a(href="#"): i.fa.fa-instagram
+      a(ng-href="{{item.twitter}}" ng-if="item.twitter"): i.fa.fa-twitter
+      a(ng-href="{{item.facebook}}" ng-if="item.facebook"): i.fa.fa-facebook
+      a(ng-href="{{item.linkedin}}" ng-if="item.linkedin"): i.fa.fa-linkedin
+      a(ng-href="{{item.instagram}}" ng-if="item.instagram"): i.fa.fa-instagram
 
 mixin moduloDirectorio
   .moduloDirectorio.container.fluid
     .c
-      .what Secretaría Particular
-      .mail: a(href="mailto:#")
+      .what {{item.nombre}}
+      .mail: a(ng-href="mailto:{{item.correo}}")
         i.fa.fa-envelope-o
-        |  particular@reynosa.gob.mx
+        |  {{item.correo}}
       .phone
         i.fa.fa-phone
-        |  3554-3554
+        |  {{item.telefono}}
       .addr
         i.fa.fa-map-marker
-        |  <strong>Palacio Municipal 1er. Piso</strong>
+        |  <strong>{{item.direccion_1}}</strong>
         br
-        | Morelos No. 645 entre Hidalgo y Juárez, Zona Centro
+        | {{item.direccion_2}}
 
 mixin accesos
   .accesos-directos
@@ -191,22 +200,19 @@ mixin accesos
       label.fa.fa-phone(for="check-telefonos")
       ul
         li: a(href="tel:066")
-          .sub Emergencias
+          .sub Emergencias y Protección Civil
           .tit Tel: 066
-        li: a(href="tel:9557020")
-          .sub Protección civil
-          .tit Tel: 955-7020
-        li: a(href="tel:072")
-          .sub Quejas y denuncias
-          .tit Tel: 072
+        li: a(href="tel:070")
+          .sub Centro Integral de Atención Ciudadana
+          .tit Tel: 070
     .webs
       input(type="checkbox").nom.nod.not#check-webs
       label.fa.fa-share-square-o(for="check-webs")
       ul
-        li: a(href="http://www.reynosa.gob.mx/gobierno/" target="_blank")
-          .sub Gobierno
+        li: a(href="gabinete.html")
+          .sub Gabinete
           .tit Funcionarios municipales
-        li: a(href="directorio.html" target="_blank")
+        li: a(href="directorio.html")
           .sub Directorio
           .tit Dependencias municipales
         li: a(href="http://nuevolaredo.gob.mx/ciac-admin/" target="_blank")

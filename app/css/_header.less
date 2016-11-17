@@ -1,0 +1,163 @@
+header{
+  padding: 5px 0 0 0;
+  position: relative;
+  .logo{position: relative;z-index: 1; img{max-width: 200px; @media @mobile{max-width: 140px;}} @media @mobile{padding: 0 0 3px 0;}}
+  &:before{
+    content:"";
+    background-image:url(img/squares2.png);
+    background-repeat: no-repeat;
+    background-position: right center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    right: 0;top: 0;
+    z-index: 0;
+    @media @tablet{
+      width: 20%;
+      background-size: contain;
+      background-position: right 40px;
+    }
+    @media @mobile{
+      width: 30%;
+      background-size: contain;
+      background-position: right 42px;
+    }
+  }
+  &:after{
+    content:"";
+    background-image:url(img/squares.png);
+    background-repeat: no-repeat;
+    background-position: left top;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;top: 0;
+    z-index: -1;
+    @media @tablet{
+      width: 20%;
+      background-size: contain;
+    }
+    @media @mobile{
+      width: 30%;
+      background-size: contain;
+    }
+  }
+
+  .masmodernidad{
+    img{.fluid;}
+    position: absolute;
+    right: 15%;
+    top: 5%;
+    width: 180px;
+    @media @tablet{ width: 140px; right: 12%; top: 3%; }
+    @media @mobile{ display: none; }
+  }
+
+  nav{
+    width: 100%;
+    margin-top: 2px;
+    text-transform: uppercase;
+    @media @mobile{
+      display: none;
+      &.open{
+        display: block;
+      }
+    }
+    ul{
+      .container;
+      list-style: none;
+      li{
+        .tac;
+        .c;
+        position: relative;
+        border-bottom:2px solid @w;
+        font-size: 0.8em;
+        .box-sizing(border-box);
+
+        @media @tablet{
+          //.c6;
+          font-size: 0.6em;
+
+        }
+        @media @mobile{ .c12; }
+        a{
+          display: block;
+          padding: 8px 10px;
+          text-decoration: none;
+          color:@main;
+          &:hover{
+            color:@sec;
+          }
+        }
+        //Submenu
+        ul{
+          display: none;
+          position: absolute;
+          z-index: 1;
+          .container;
+          .fluid;
+          @media @mobile{
+            position: static;
+            display: block;
+          }
+          li{
+            .c12;
+            font-size: 1em;
+            &:first-child{margin-top: 2px;}
+            a{
+              background: #fff;
+            }
+          }
+        }
+        &:hover{
+          ul{
+            display: block;
+          }
+        }
+        .fa{
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: 0px;
+          text-align: center;
+        }
+        &:hover{
+          border-color: @main;
+        }
+      }
+    }
+    &>ul>li{&:first-child{display: none; &+li{.c1; @media @mobile{.c12;}} } }
+    .logo-inside{margin-top: -12px;}
+  }
+  .menuBtn{
+    position: absolute;
+    top: 5px; right: 5px;
+    padding: 4px 10px;
+    .border-radius(3px);
+    border: 1px solid @w/1.1;
+    cursor: pointer;
+    color:@main;
+    background: #fff;
+    z-index: 10;
+    display: none;
+    @media @mobile{
+      display: block;
+    }
+  }
+  &.stuck{
+    position: fixed;
+    z-index: 99998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    nav>ul>li{&:first-child{display: block;.c1; @media @mobile{display: none;}} }
+    .container:first-child{display: none; @media @mobile{display: block;}}
+    //&:before,&:after{display: none;}
+    &:before, &:after{display: none;}
+    .masmodernidad{display: none;}
+  }
+  @media @mobile{
+    border-bottom: 2px solid @g;
+  }
+}

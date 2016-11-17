@@ -1,0 +1,45 @@
+/* SLICK SETTINGS */
+.slick-slide:focus{outline:none;}
+.slick-arrow{
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  font-size: 0;
+  width: 40px;
+  text-align: center;
+  color:@w;
+  &.slick-prev{
+    left: 10px;
+    &:before{content:"\f053";}
+  }
+  &.slick-next{
+    right: 10px;
+    &:before{content:"\f054";}
+  }
+  &:before{
+    font-family: FontAwesome;
+    font-size: 20px;
+  }
+}
+
+
+.proximamente{ font-size: 1.4em; color:@g; padding: 100px 0; .tac;
+  @media @mobile{font-size: 0.8em;}
+}
+
+#swipebox-overlay{
+  background: rgba(61, 165, 216, 0.8);
+  #swipebox-bottom-bar, #swipebox-top-bar{
+    background:@main;
+  }
+  #swipebox-top-bar{
+    transform: translate3d(0,50px,0) !important;
+    padding: 20px 0 20px 0;
+    height: auto;
+  }
+}
+
+
+#swipebox-slider .slide .swipebox-inline-container, #swipebox-slider .slide .swipebox-video-container, #swipebox-slider .slide img{
+  width: 100% !important;
+}
