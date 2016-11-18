@@ -1556,7 +1556,7 @@ margin-left:calc(100% + 10px);
   -o-transition: 0.5s;
   transition: 0.5s;
 }
-.moduloGabinete .social a {
+.social a {
   text-align: center;
   display: inline-block;
   width: 28px;
@@ -1577,16 +1577,16 @@ margin-left:calc(100% + 10px);
   line-height: 1.6;
   margin: 4px;
 }
-.moduloGabinete .social a:hover .fa-twitter {
+.social a:hover .fa-twitter {
   color: #55ACEE !important;
 }
-.moduloGabinete .social a:hover .fa-facebook {
+.social a:hover .fa-facebook {
   color: #3C5A96 !important;
 }
-.moduloGabinete .social a:hover .fa-linkedin {
+.social a:hover .fa-linkedin {
   color: #1C7FB6 !important;
 }
-.moduloGabinete .social a:hover .fa-instagram {
+.social a:hover .fa-instagram {
   color: #E64159 !important;
 }
 .moduloDirectorio {
@@ -2079,9 +2079,13 @@ body {
   font-size: 1em;
   text-align: center;
 }
-.subheader h1 {
+.subheader h1,
+.subheader h2 {
   text-transform: uppercase;
   font-weight: lighter;
+}
+.subheader h2 {
+  font-size: 0.9em;
 }
 .metainfo {
   background-image: 8121991;
@@ -2308,6 +2312,10 @@ footer h2 {
   font-size: 1em;
   font-family: 'Roboto Slab', serif;
 }
+footer .proximos-eventos {
+  color: #3DA5D8;
+  font-size: 0.8em;
+}
 footer .proximos-eventos li {
   padding: 5px 0;
   border-bottom: 1px solid #073e66;
@@ -2317,10 +2325,6 @@ footer .proximos-eventos .img {
   height: 80px;
   background-size: cover;
   background-position: center;
-}
-footer .proximos-eventos a {
-  color: #3DA5D8;
-  font-size: 0.8em;
 }
 footer ul {
   list-style: none;

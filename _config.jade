@@ -13,6 +13,8 @@ include dw4/_dw4.jade
 - css('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
 - css('https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.css')
 - css('https://fonts.googleapis.com/css?family=Roboto+Slab')
+- css('https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.4/css/ngDialog.min.css')
+- css('https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.4/css/ngDialog-theme-default.min.css')
 
 
 - css('app/app.css')
@@ -38,6 +40,7 @@ include dw4/_dw4.jade
 - js('https://cdn.rawgit.com/nmccready/angular-simple-logger/master/dist/angular-simple-logger.light.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.6.4/js/ngDialog.min.js')
 //- js('https://cdnjs.cloudflare.com/ajax/libs/angular-slick-carousel/3.1.5/angular-slick.min.js')
 - js('app/js/angular-slick.js')
 
@@ -95,9 +98,11 @@ mixin header
     +menu
     .menuBtn: i.fa.fa-bars
     
-mixin subheader(title)
+mixin subheader(title, subtitle)
   .subheader
     h1 #{title}
+    if(subtitle)
+      h2 #{subtitle}
     
 mixin metainfo
   .metainfo
@@ -122,13 +127,18 @@ mixin footer
   footer
     .container
       .c4.ct12.cm12.g
+        script(type="text/ng-template" id="noticiaTmp")
+          +moduloEvento
+                      
         h2 Próximos eventos
         ul.proximos-eventos.container
-            li.c12.ct6.cm12(ng-repeat="item in eventos")
-              a(ng-href="{{item.gsx$img.$t}}" ng-attr-title="<h2>{{item.gsx$titulo.$t}}</h2>{{item.gsx$contenido.$t}}").container.ng-box
+            li.c12.ct6.cm12(ng-repeat="item in eventos" ng-click="noticiaOpen(item.id.$t)")
+              .container
                 .c3.g: .img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
                 .c8.g
                   p {{item.gsx$titulo.$t}}
+        
+              
               
       .c4.ct6.cm12.g.sobre
         h2 Mensaje del Gobernador
@@ -158,6 +168,15 @@ mixin footer
             .c6.g.second: +menu
 
 
+mixin moduloEvento
+  .moduloNota.container.fluid
+    .c12.img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
+    .c12.g: .title {{item.gsx$titulo.$t}}
+    .c12.g: .date
+      i.fa.fa-calendar-o
+      |  {{item.gsx$mes.$t}} {{item.gsx$dia.$t}}
+    .c12.g: p.description(ng-bind-html="item.gsx$contenido.$t")
+
 mixin moduloNota
   a(ui-sref="nota({id:item.id.$t})").moduloNota.container.fluid
     .c12.img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
@@ -171,7 +190,7 @@ mixin moduloNota
       
 mixin moduloGabinete
   .moduloGabinete.container.fluid
-    a.c12.img(ui-sref="nota" ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
+    a.c12.img(ui-sref="gabinete-detalle({id:item.id.$t})" ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
       .hover.container.middle.center
         .c
           .name {{item.gsx$nombre.$t}}

@@ -1,33 +1,16 @@
 include ../../_config.jade
 
++subheader('{{item.gsx$nombre.$t}}', '{{item.gsx$titulo.$t}}')
 .container.nota
-    .c9.cm12.g
-      img(src="http://loremflickr.com/800/600/tech", alt="").fluid
-      +subheader('Título de la nota')
-      
-      .container: .c
-        p: strong Subtítulo de la nota
-        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium distinctio at, officia reprehenderit ad quidem veritatis ullam nemo et! Cupiditate dolores totam voluptatibus maiores possimus alias enim itaque, libero recusandae.
-        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores cupiditate hic ut expedita consectetur dolores deleniti recusandae incidunt quis vitae minus, a iure unde corporis eligendi inventore. Aliquid, accusamus, optio?
-        p: strong Subtítulo de la nota
-        p  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-      +metainfo
-      
-    aside.c3.cm12.g
-      .container.notenav
-        .c.tac
-          a(href="#" title="Artículo anterior").tooltip.button: i.fa.fa-chevron-left
-          |  
-          a(href="#" title="Artículo siguiente").tooltip.button: i.fa.fa-chevron-right
-      h2 Artículos recientes
-      ul
-        - for(var i=0;i<4;i++)
-          li: a(href="#")
-            i.fa.fa-file-o
-            |  Exportan arte realizado con tambos y cubetas de lámina
-      h2 Categorías
-      ul
-        - for(var i=0;i<4;i++)
-          li: a(href="#")
-            i.fa.fa-caret-right
-            |  Categorías
+    
+    .c12
+    .c6.cm12.g
+      img(ng-src="{{item.gsx$img.$t}}", alt="").fluid
+    .c6.cm12.g
+      .container
+        .c12: div(ng-bind-html="item.gsx$contenido.$t")
+        .c12.cm12.g.social.tac
+          a(ng-href="{{item.gsx$twitter.$t}}" ng-if="item.gsx$twitter.$t"): i.fa.fa-twitter
+          a(ng-href="{{item.gsx$facebook.$t}}" ng-if="item.gsx$facebook.$t"): i.fa.fa-facebook
+          a(ng-href="{{item.gsx$linkedin.$t}}" ng-if="item.gsx$linkedin.$t"): i.fa.fa-linkedin
+          a(ng-href="{{item.gsx$instagram.$t}}" ng-if="item.gsx$instagram.$t"): i.fa.fa-instagram

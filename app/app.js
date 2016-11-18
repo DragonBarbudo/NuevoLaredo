@@ -20,7 +20,8 @@ var app = angular.module('dw4', [
   'angular-loading-bar',
   'ui.router',
   'ngSanitize',
-  'ngSanitize'
+  'ngSanitize',
+  'ngDialog'
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider){
@@ -70,7 +71,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       controller: 'MainCtrl'
     })
     .state('gabinete-detalle',{
-      url   : '/gabinete/',
+      url   : '/gabinete/:id',
       templateUrl : '/app/view/gabinete-detalle.html',
       controller: 'MainCtrl'
     });
@@ -85,7 +86,7 @@ app.run(function(){
 });
 
 
-app.controller('MainCtrl', function($scope, apis, $location, $stateParams){
+app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDialog){
   $scope.prensa=null;
   $scope.noticias;
   $scope.eventos;
@@ -108,16 +109,34 @@ app.controller('MainCtrl', function($scope, apis, $location, $stateParams){
       value.id.$t = encodeURIComponent(value.id.$t);
     })
   });
+  apis.gabinete().then(function(result){
+    $scope.gabinete = result.data.feed.entry;
+    angular.forEach($scope.gabinete, function(value,key){
+      value.id.$t = encodeURIComponent(value.id.$t);
+    })
+  });
   apis.noticias().then(function(result){ $scope.noticias = result.data; });
   apis.eventos().then(function(result){ $scope.eventos = result.data.feed.entry; });
-  apis.gabinete().then(function(result){ $scope.gabinete = result.data.feed.entry; });
+
   apis.directorio().then(function(result){ $scope.directorio = result.data.feed.entry; });
 
   $scope.suscribirme_mail = function(){
     window.location ='suscripcion.html#'+$scope.mail;
   }
 
-});
+  $scope.noticiaOpen = function (id) {
+        ngDialog.open({
+          template: 'noticiaTmp',
+          className: 'ngdialog-theme-default',
+          scope: $scope,
+          controller: ['$scope', 'apis', function($scope, apis){
+            var decodedurl = "https://crossorigin.me/"+decodeURIComponent(id)+"?alt=json";
+            apis.item( decodedurl ).then(function(result){ $scope.item = result.data.entry; });
+          }]
+        });
+    };
+}); //MainCtrl
+
 
 app.controller('FormCtrl', function($scope, $http){
   $scope.sent = false;
