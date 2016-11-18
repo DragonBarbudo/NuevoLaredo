@@ -29,7 +29,7 @@ include dw4/_dw4.jade
 - js('https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/js/buttons.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/jquery.swipebox/1.4.4/js/jquery.swipebox.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/tooltipster/3.3.0/js/jquery.tooltipster.min.js')
-- js('https://cdnjs.cloudflare.com/ajax/libs/angular-slick-carousel/3.1.5/angular-slick.min.js')
+
 - js('https://cdnjs.cloudflare.com/ajax/libs/angular-scroll/1.0.0/angular-scroll.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.9.0/loading-bar.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.3.3/angular-google-maps.js')
@@ -38,6 +38,8 @@ include dw4/_dw4.jade
 - js('https://cdn.rawgit.com/nmccready/angular-simple-logger/master/dist/angular-simple-logger.light.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/sticky.min.js')
+//- js('https://cdnjs.cloudflare.com/ajax/libs/angular-slick-carousel/3.1.5/angular-slick.min.js')
+- js('app/js/angular-slick.js')
 
 
 - js('app/app.js')
@@ -122,8 +124,7 @@ mixin footer
       .c4.ct12.cm12.g
         h2 Próximos eventos
         ul.proximos-eventos.container
-          div(ng-repeat="item in eventos")
-            li.c12.ct6.cm12
+            li.c12.ct6.cm12(ng-repeat="item in eventos")
               a(ng-href="{{item.gsx$img.$t}}" ng-attr-title="<h2>{{item.gsx$titulo.$t}}</h2>{{item.gsx$contenido.$t}}").container.ng-box
                 .c3.g: .img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
                 .c8.g

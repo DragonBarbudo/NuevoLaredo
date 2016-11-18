@@ -212,6 +212,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/app\/js\/angular-slick.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/js\/angular-slick.js",
+		"outputAbbreviatedPath": "\/app\/js\/min\/angular-slick-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 0
+		},
 	"\/app\/view\/cultura-y-turismo.html": {
 		"fileType": 8192,
 		"ignore": 1,
@@ -291,15 +302,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
-		},
-	"\/app\/view\/inicio.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/view\/inicio.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/app\/view\/inicio.jade": {
 		"compileDebug": 1,
@@ -502,13 +504,13 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/data\/noticias\/2.JPG": {
+	"\/data\/noticias\/2.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 93949,
-		"inputAbbreviatedPath": "\/data\/noticias\/2.JPG",
-		"outputAbbreviatedPath": "\/data\/noticias\/2.JPG",
+		"inputAbbreviatedPath": "\/data\/noticias\/2.jpg",
+		"outputAbbreviatedPath": "\/data\/noticias\/2.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -741,17 +743,6 @@
 		"processHTML": 0,
 		"randomFootnoteNumbers": 0,
 		"useCompatibilityMode": 0
-		},
-	"\/favicon.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6734,
-		"inputAbbreviatedPath": "\/favicon.png",
-		"outputAbbreviatedPath": "\/favicon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
 		},
 	"\/index.html": {
 		"fileType": 8192,

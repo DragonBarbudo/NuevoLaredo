@@ -16,7 +16,7 @@ var app = angular.module('dw4', [
   'ngBox',
   'tooltipster',
   'duScroll',
-  'slickCarousel',
+  'slick',
   'angular-loading-bar',
   'ui.router',
   'ngSanitize',
@@ -26,7 +26,7 @@ var app = angular.module('dw4', [
 app.config(function($stateProvider, $urlRouterProvider){
 
 
-  $urlRouterProvider.otherwise('/','/inicio');
+
 
   $stateProvider
     .state('inicio',{
@@ -75,7 +75,7 @@ app.config(function($stateProvider, $urlRouterProvider){
       controller: 'MainCtrl'
     });
 
-
+    $urlRouterProvider.otherwise('/inicio');
 
 });
 
@@ -86,7 +86,7 @@ app.run(function(){
 
 
 app.controller('MainCtrl', function($scope, apis, $location, $stateParams){
-  $scope.prensa;
+  $scope.prensa=null;
   $scope.noticias;
   $scope.eventos;
   $scope.gabinete;
