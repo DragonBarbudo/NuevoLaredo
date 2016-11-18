@@ -115,7 +115,6 @@ app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDia
       value.id.$t = encodeURIComponent(value.id.$t);
     })
   });
-  apis.noticias().then(function(result){ $scope.noticias = result.data; });
   apis.eventos().then(function(result){ $scope.eventos = result.data.feed.entry; });
 
   apis.directorio().then(function(result){ $scope.directorio = result.data.feed.entry; });
@@ -160,17 +159,6 @@ app.factory('apis', function($q, $http){
 
 
 
-  function noticias(){
-    var deferred = $q.defer();
-    $http({
-      method    : "GET",
-      url       : "data/noticias.json",
-      headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
-    }).then(function(result){
-      deferred.resolve(result);
-    });
-    return deferred.promise;
-  }
 
   function eventos(){
     var deferred = $q.defer();
@@ -240,7 +228,6 @@ app.factory('apis', function($q, $http){
 
   return{
     prensa      : prensa,
-    noticias    : noticias,
     eventos     : eventos,
     gabinete    : gabinete,
     directorio  : directorio,
