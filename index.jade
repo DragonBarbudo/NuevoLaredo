@@ -9,54 +9,16 @@ include _config.jade
     +topbar
     +header
     
-    div(ng-controller="MainCtrl")
-      section.sliders
-        slick(arrows="false" as-nav-for="#menuslider" responsive="[{breakpoint:720,settings:{arows:true}}]" init-onload="true" data="prensa")#mainslider  
-            div(ng-repeat="item in prensa" ng-style="{ 'background-image':'url('+item.img+')' }")
-              .container.fluid.middle
-                .c10.o1.slider-date {{item.fecha}}
-                .c6.o1.cm10.slider-title
-                  | {{item.titulo}}
-                  br
-                  small {{item.contenido | htmlToPlaintext | limitTo:60}}
-                    | ...
-                .c6.o1.cm10: a.slider-link(href="nota.html").button.button-border Leer más
+    ui-view
+
+      
                 
-        slick(arrows="false" as-nav-for="#mainslider" focus-on-select="true" vertical-swiping="true" vertical="true" slides-to-show="3" init-onload="true" data="prensa")#menuslider.nom
-          div(ng-repeat="item in prensa")
-            div
-              .container.fluid.middle
-                .c10.slider-type Noticia
-                .c10.slider-title {{item.titulo}}
-                  
-      section.unete
-        .container
-          .c12.tac
-            h2 Únete a nuestra comunidad
-            p Suscríbete al boletín oficial y continua recibiendo información de valor.
-          .c12.field
-            form.container(ng-submit="suscribirme_mail()")
-              .c10.ct8.cm12: input(type="mail" ng-model="mail" placeholder="Escribe tu correo electrónico")
-              .c2.ct4.cm12: button(type="submit").button.button-rounded Suscribirme
+      
+                
     
-      section.ultimas-noticias
-        .container
-          .c12.tac
-            h2 Últimas Noticias
-            p Te presentamos los sucesos más recientes y relevantes de nuestra comunidad.
-        .container
-          .c12
-            slick(slides-to-show="3" autoplay="true" responsive="[{breakpoint:720,settings:{slidesToShow:1}}]" init-onload="true" data="noticias")#noticiasslider
-              div(ng-repeat="item in noticias")
-                div: +moduloNota
-      
-      section.otros
-        .container.tac
-          .c: a(href="http://difnuevolaredo.gob.mx/", target="_blank"): img(src="app/img/lg_dif.png", alt="DIF")
-          .c: a(href="http://nuevolaredo.gob.mx/ciac-admin/", target="_blank"): img(src="app/img/lg_ciac.png", alt="CIAC")
-          .c: a(href="http://www.tamaulipas.gob.mx/", target="_blank"): img(src="app/img/lg_tam.png", alt="Tamaulipas")
-          .c: a(href="http://www.gob.mx/presidencia", target="_blank"): img(src="app/img/lg_mx.png", alt="Presidencia de la República")
-      
+    
+    
+    div(ng-controller="MainCtrl")
       +footer
         
     +scripts

@@ -1,0 +1,27 @@
+include ../../_config.jade
+
+.container.nota
+    .c9.cm12.g
+      img(ng-src="{{item.gsx$img.$t}}", alt="").fluid
+      +subheader('{{item.gsx$titulo.$t}}')
+      
+      .container: .c: div(ng-bind-html="item.gsx$contenido.$t")
+      +metainfo
+      
+    aside.c3.cm12.g
+      .container.notenav
+        .c.tac
+          a(href="#" title="Artículo anterior").tooltip.button: i.fa.fa-chevron-left
+          |  
+          a(href="#" title="Artículo siguiente").tooltip.button: i.fa.fa-chevron-right
+      h2 Artículos recientes
+      ul
+          li(ng-repeat="item in prensa"): a(href="#")
+            i.fa.fa-file-o
+            |  {{item.titulo}}
+      h2 Categorías
+      ul
+        - for(var i=0;i<4;i++)
+          li: a(href="#")
+            i.fa.fa-caret-right
+            |  Categorías

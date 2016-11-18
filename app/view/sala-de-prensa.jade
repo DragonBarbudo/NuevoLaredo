@@ -1,0 +1,23 @@
+include ../../_config.jade
+
++subheader('Sala de prensa')
+
+section.prensa
+  .container
+      .c9.cm12.g
+        .container
+            .c6.ct12.cm12.g(ng-repeat="item in prensa"): +moduloNota
+
+  
+      aside.c3.cm12.g
+        h2 Artículos recientes
+        ul
+            li(ng-repeat="item in prensa"): a(href="#")
+              i.fa.fa-file-o
+              |  {{item.titulo}}
+        h2 Categorías
+        ul
+          - for(var i=0;i<4;i++)
+            li: a(href="#")
+              i.fa.fa-caret-right
+              |  Categorías

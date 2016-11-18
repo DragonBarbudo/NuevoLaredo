@@ -1,0 +1,8 @@
+include ../../_config.jade
+
+
++subheader('Gabinete')
+section.gabinete
+  //.container: .c6.o3: +moduloGabinete
+  .container
+    .c4.cm6.g(ng-repeat="item in gabinete"): +moduloGabinete

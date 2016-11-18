@@ -22,6 +22,8 @@ include dw4/_dw4.jade
 
 - js('https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js')
 - js('https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js')
+- js('https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js')
 - js('https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/js/buttons.min.js')
@@ -41,19 +43,20 @@ include dw4/_dw4.jade
 - js('app/app.js')
 
 - // MENU ################################################################################
-- menu('<img src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo" class="fluid" />', 'index.html', null, {"class":"logo-inside"})
-- menu('Inicio', 'index.html')
-- menu('Cultura y turismo', 'cultura-y-turismo.html')
+- menu('<img src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo" class="fluid" />', '/inicio', null, {"class":"logo-inside", 'ui-sref':'inicio'})
+- menu('Inicio', '/inicio', null, {'ui-sref':'inicio'})
+- menu('Cultura y turismo', '/cultura-y-turismo', null, {'ui-sref':'cultura-y-turismo'})
 - menu('Trámites y servicios <i class="fa fa-angle-down"></i>', '#tramites-y-servicios')
-- menu('Pago de predial', 'pago-de-predial.html', '#tramites-y-servicios')
+- menu('Pago de predial', '/pago-de-predial', '#tramites-y-servicios', {'ui-sref':'pago-de-predial'})
 - menu('Obras públicas', 'http://nuevolaredo.gob.mx/obrasweb/', '#tramites-y-servicios', {'target':'_blank'})
 - menu('Servicios públicos', 'http://nuevolaredo.gob.mx/servweb/', '#tramites-y-servicios', {'target':'_blank'})
 - menu('Transparencia', 'http://nld.gob.mx/index.php?m=transparencia&tipo=oficios', null, {'target':'_blank'})
 - menu('Acércate <i class="fa fa-angle-down"></i>', '#acercate')
-- menu('Gabinete', 'gabinete.html', '#acercate')
-- menu('Directorio', 'directorio.html', '#acercate')
+- menu('Mensaje del Gobernador', '/mensaje-del-gobernador', '#acercate', {'ui-sref':'mensaje-del-gobernador'})
+- menu('Gabinete', '/gabinete', '#acercate', {'ui-sref':'gabinete'})
+- menu('Directorio', '/directorio', '#acercate', {'ui-sref':'directorio'})
 - menu('Centro integral de Atención a Ciudadanos', 'http://nuevolaredo.gob.mx/ciac-admin/', '#acercate', {'target':'_blank'})
-- menu('Sala de prensa', 'sala-de-prensa.html')
+- menu('Sala de prensa', '/sala-de-prensa', null, {'ui-sref':'sala-de-prensa'})
 
 
 
@@ -63,13 +66,13 @@ mixin topbar
     .container
       .c6.ct12.cm12
         .container.tac
-          .c.cm12.telefono
+          //.c.cm12.telefono
             i.fa.fa-phone
             span  01-800-987-654
           a.c.cm12(href="mailto:admin@nuevolaredo.gob.mx")
             i.fa.fa-envelope
-            span  admin@nuevolaredo.gob.mx
-          a.c.cm12(href="#")
+            span  admin@nld.gob.mx
+          //a.c.cm12(href="#")
             i.fa.fa-user
             span  Iniciar sesión
       .c6.ct12.cm12.redes.tar
@@ -85,7 +88,7 @@ mixin topbar
 
 mixin header
   header
-    .container: .c.tac.logo: a(href="index.html"): img(src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo")
+    .container: .c.tac.logo: a(ui-sref="inicio"): img(src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo")
     .masmodernidad: img(src="app/img/masmodernidad.png", alt="Más modernidad")
     +menu
     .menuBtn: i.fa.fa-bars
@@ -99,13 +102,11 @@ mixin metainfo
     .container
       .c
         i.fa.fa-calendar-o
-        |  Noviembre 25, 2005
+        |  {{item.gsx$fecha.$t}}
       .c
         i.fa.fa-folder-o
-        |  Noticia
-      .c
-        i.fa.fa-user
-        |  Autor
+        |  {{item.gsx$tipo.$t}}
+      
       .c
         +socialshare
 
@@ -129,19 +130,26 @@ mixin footer
                   p {{item.gsx$titulo.$t}}
               
       .c4.ct6.cm12.g.sobre
-        h2 Sobre tu gobierno
+        h2 Mensaje del Gobernador
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque accusantium, dolore impedit magnam repellendus repudiandae eius blanditiis iure molestiae sequi officia, soluta, commodi repellat? Ad voluptates minima cumque eius vitae.
         p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tenetur, nobis veritatis nostrum possimus, distinctio, dolor iusto natus architecto ea dignissimos fugiat qui rem eligendi labore id sunt minus est!
-          
+        p.tac: a(ui-sref="mensaje-del-gobernador").button.button-border Seguir leyendo
+        
+        
       .c4.ct6.cm12.g
         h2 Síguenos en Facebook
         .tac
           | <div class="fb-page" data-href="https://www.facebook.com/gobiernodenuevolaredo/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"></div>
-  
+    section.otros
+      .container.tac
+        .c: a(href="http://difnuevolaredo.gob.mx/", target="_blank"): img(src="app/img/lg_dif.png", alt="DIF")
+        .c: a(href="http://nuevolaredo.gob.mx/ciac-admin/", target="_blank"): img(src="app/img/lg_ciac.png", alt="CIAC")
+        .c: a(href="http://www.tamaulipas.gob.mx/", target="_blank"): img(src="app/img/lg_tam.png", alt="Tamaulipas")
+        .c: a(href="http://www.gob.mx/presidencia", target="_blank"): img(src="app/img/lg_mx.png", alt="Presidencia de la República")
     .end
       .container.middle
         .c6.cm12.g.tac
-          .footer-logo: a(href="index.html"): img(src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo")
+          .footer-logo: a(ui-sref="inicio"): img(src="app/img/nuevolaredo.png", alt="Gobierno de Nuevo Laredo")
           p Todos lo Derechos Reservados. 2016
         .c6.cm12.g.tar
           .container.tal
@@ -150,23 +158,24 @@ mixin footer
 
 
 mixin moduloNota
-  a(href="nota.html").moduloNota.container.fluid
-    .c12.img(ng-style="{ 'background-image':'url('+item.img+')' }")
-    .c12.g: .title {{item.titulo}}
+  a(ui-sref="nota({id:item.id.$t})").moduloNota.container.fluid
+    .c12.img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
+    .c12.g: .title {{item.gsx$titulo.$t}}
     .c12.g: .date
       i.fa.fa-calendar-o
-      |  {{ item.fecha }}
+      |  {{ item.gsx$fecha.$t }}
     .c12.g: p.description 
-      | {{item.contenido | htmlToPlaintext | limitTo:90}}
+      | {{item.gsx$contenido.$t | htmlToPlaintext | limitTo:90}}
       | ...
+      
 mixin moduloGabinete
   .moduloGabinete.container.fluid
-    a.c12.img(href="nota.html" ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
+    a.c12.img(ui-sref="nota" ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
       .hover.container.middle.center
         .c
           .name {{item.gsx$nombre.$t}}
           .job-title {{item.gsx$titulo.$t}}
-    a(href="nota.html").c10.cm12.g
+    a(ui-sref="nota").c10.cm12.g
       .title {{item.gsx$nombre.$t}}
       p.description 
         | {{item.gsx$contenido.$t | htmlToPlaintext | limitTo:90}}
@@ -209,10 +218,10 @@ mixin accesos
       input(type="checkbox").nom.nod.not#check-webs
       label.fa.fa-share-square-o(for="check-webs")
       ul
-        li: a(href="gabinete.html")
+        li: a(ui-sref="gabinete")
           .sub Gabinete
           .tit Funcionarios municipales
-        li: a(href="directorio.html")
+        li: a(ui-sref="directorio")
           .sub Directorio
           .tit Dependencias municipales
         li: a(href="http://nuevolaredo.gob.mx/ciac-admin/" target="_blank")

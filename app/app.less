@@ -280,6 +280,7 @@ footer{
       font-size: 0.8em;
       margin: 10px 0;
     }
+    .button{color:@w; border-color:@w; &:hover{color:@main;}}
   }
 
   .end{
@@ -412,5 +413,11 @@ section.buzon{
 
 .otros{
   padding: 40px;
-  .container{.fluid;}
+  .container{
+    .fluid;
+    padding: 20px 0;
+    background: #fff;
+    .border-radius(10px);
+    border: 4px solid @main/1.1;
+  }
 }

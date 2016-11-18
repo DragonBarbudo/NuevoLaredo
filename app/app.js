@@ -17,10 +17,65 @@ var app = angular.module('dw4', [
   'tooltipster',
   'duScroll',
   'slickCarousel',
-  'angular-loading-bar'
+  'angular-loading-bar',
+  'ui.router',
+  'ngSanitize',
+  'ngSanitize'
 ]);
 
-app.config(function(){
+app.config(function($stateProvider, $urlRouterProvider){
+
+
+  $urlRouterProvider.otherwise('/','/inicio');
+
+  $stateProvider
+    .state('inicio',{
+      url   : '/inicio',
+      templateUrl : '/app/view/inicio.html',
+      controller: 'MainCtrl'
+    })
+    .state('cultura-y-turismo',{
+      url   : '/cultura-y-turismo',
+      templateUrl : '/app/view/cultura-y-turismo.html',
+      controller: 'MainCtrl'
+    })
+    .state('pago-de-predial',{
+      url   : '/pago-de-predial',
+      templateUrl : '/app/view/pago-de-predial.html',
+      controller: 'MainCtrl'
+    })
+    .state('mensaje-del-gobernador',{
+      url   : '/mensaje-del-gobernador',
+      templateUrl : '/app/view/mensaje-del-gobernador.html',
+      controller: 'MainCtrl'
+    })
+    .state('gabinete',{
+      url   : '/gabinete',
+      templateUrl : '/app/view/gabinete.html',
+      controller: 'MainCtrl'
+    })
+    .state('directorio',{
+      url   : '/directorio',
+      templateUrl : '/app/view/directorio.html',
+      controller: 'MainCtrl'
+    })
+    .state('sala-de-prensa',{
+      url   : '/sala-de-prensa',
+      templateUrl : '/app/view/sala-de-prensa.html',
+      controller: 'MainCtrl'
+    })
+    .state('nota',{
+      url   : '/nota/:id',
+      templateUrl : '/app/view/nota.html',
+      controller: 'MainCtrl'
+    })
+    .state('gabinete-detalle',{
+      url   : '/gabinete/',
+      templateUrl : '/app/view/gabinete-detalle.html',
+      controller: 'MainCtrl'
+    });
+
+
 
 });
 
@@ -30,17 +85,29 @@ app.run(function(){
 });
 
 
-app.controller('MainCtrl', function($scope, apis, $location){
+app.controller('MainCtrl', function($scope, apis, $location, $stateParams){
   $scope.prensa;
   $scope.noticias;
   $scope.eventos;
   $scope.gabinete;
   $scope.directorio;
+  $scope.item;
+
+  if($stateParams.id){
+    var decodedurl = "https://crossorigin.me/"+decodeURIComponent($stateParams.id)+"?alt=json";
+    apis.item( decodedurl ).then(function(result){ $scope.item = result.data.entry; });
+
+  }
 
   var mail =  $location.path();
   $scope.mail = mail.replace("/", "");
 
-  apis.prensa().then(function(result){ $scope.prensa = result.data; });
+  apis.prensa().then(function(result){
+    $scope.prensa = result.data.feed.entry;
+    angular.forEach($scope.prensa, function(value,key){
+      value.id.$t = encodeURIComponent(value.id.$t);
+    })
+  });
   apis.noticias().then(function(result){ $scope.noticias = result.data; });
   apis.eventos().then(function(result){ $scope.eventos = result.data.feed.entry; });
   apis.gabinete().then(function(result){ $scope.gabinete = result.data.feed.entry; });
@@ -55,16 +122,13 @@ app.controller('MainCtrl', function($scope, apis, $location){
 app.controller('FormCtrl', function($scope, $http){
   $scope.sent = false;
   $scope.submitForm = function(e){
-    console.log(e.target);
     var datos = $(e.target).serialize();
     $scope.form = {};
     $http({
       method: 'GET',
       url: 'http://www.dragonbarbudo.com/api/email.php?'+datos
     }).then(function(result){
-      console.log('http://www.dragonbarbudo.com/api/email.php?'+datos);
       if(result.data=="1"){
-        console.log('done');
         $scope.sent = true;
       }
     });
@@ -75,17 +139,7 @@ app.controller('FormCtrl', function($scope, $http){
 
 app.factory('apis', function($q, $http){
 
-  function prensa(){
-    var deferred = $q.defer();
-    $http({
-      method    : "GET",
-      url       : "data/prensa.json",
-      headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
-    }).then(function(result){
-      deferred.resolve(result);
-    });
-    return deferred.promise;
-  }
+
 
   function noticias(){
     var deferred = $q.defer();
@@ -138,13 +192,40 @@ app.factory('apis', function($q, $http){
     return deferred.promise;
   }
 
+  function prensa(){
+    var deferred = $q.defer();
+    $http({
+      method    : "GET",
+      //url       : "data/prensa.json",
+      url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1nIBrB1x6Sc6fAsLeIakNuCkSSMbLVNm3kfQLOxbt2H8/od6/public/values?alt=json",
+      headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
+    }).then(function(result){
+      deferred.resolve(result);
+    });
+    return deferred.promise;
+  }
+
+  function item(id){
+    var deferred = $q.defer();
+    $http({
+      method    : "GET",
+      //url       : "data/prensa.json",
+      url       : id,
+      headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
+    }).then(function(result){
+      deferred.resolve(result);
+    });
+    return deferred.promise;
+  }
+
 
   return{
     prensa      : prensa,
     noticias    : noticias,
     eventos     : eventos,
     gabinete    : gabinete,
-    directorio  : directorio
+    directorio  : directorio,
+    item        : item
   }
 
 });
