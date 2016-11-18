@@ -1601,7 +1601,15 @@ margin-left:calc(100% + 10px);
 }
 .moduloDirectorio .what {
   color: #888;
-  font-size: 1.4em;
+  font-size: 1.3em;
+  line-height: 1;
+  text-align: center;
+  padding: 20px 0;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dfdfdf;
+}
+.moduloDirectorio .what small {
+  font-size: 0.6em;
 }
 .moduloDirectorio .mail a,
 .moduloDirectorio .phone a {
@@ -2159,14 +2167,17 @@ section.sliders #menuslider .slick-slide .slider-title {
   color: #f5f5f5;
   font-size: 1.1em;
 }
-section.sliders #menuslider .slick-slide.slick-current {
+section.sliders #menuslider .slick-slide.slick-current,
+section.sliders #menuslider .slick-slide:hover {
+  cursor: pointer;
   zoom: 1;
   filter: alpha(opacity=100);
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
-section.sliders #menuslider .slick-slide.slick-current .slider-type {
+section.sliders #menuslider .slick-slide.slick-current .slider-type,
+section.sliders #menuslider .slick-slide:hover .slider-type {
   color: #E41387;
 }
 section.unete {
@@ -2312,19 +2323,27 @@ footer h2 {
   font-size: 1em;
   font-family: 'Roboto Slab', serif;
 }
-footer .proximos-eventos {
-  color: #3DA5D8;
-  font-size: 0.8em;
-}
 footer .proximos-eventos li {
   padding: 5px 0;
   border-bottom: 1px solid #073e66;
+  cursor: pointer;
+  color: #3DA5D8;
+  font-size: 0.9em;
 }
-footer .proximos-eventos .img {
+footer .proximos-eventos li .img {
   width: 80px;
   height: 80px;
   background-size: cover;
   background-position: center;
+}
+footer .proximos-eventos li .date {
+  color: #f5f5f5;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+footer .proximos-eventos li:hover {
+  color: #f5f5f5;
+  background: #07436f;
 }
 footer ul {
   list-style: none;
@@ -2394,89 +2413,13 @@ section.buzon,
 section.turismo {
   background: #f5f5f5;
 }
-section.noticias div:nth-child(2) .fa,
-section.prensa div:nth-child(2) .fa,
-section.gabinete div:nth-child(2) .fa,
-section.directorio div:nth-child(2) .fa,
-section.buzon div:nth-child(2) .fa,
-section.turismo div:nth-child(2) .fa,
-section.noticias div:nth-child(9) .fa,
-section.prensa div:nth-child(9) .fa,
-section.gabinete div:nth-child(9) .fa,
-section.directorio div:nth-child(9) .fa,
-section.buzon div:nth-child(9) .fa,
-section.turismo div:nth-child(9) .fa {
-  color: #E41387;
-}
-section.noticias div:nth-child(3) .fa,
-section.prensa div:nth-child(3) .fa,
-section.gabinete div:nth-child(3) .fa,
-section.directorio div:nth-child(3) .fa,
-section.buzon div:nth-child(3) .fa,
-section.turismo div:nth-child(3) .fa,
-section.noticias div:nth-child(10) .fa,
-section.prensa div:nth-child(10) .fa,
-section.gabinete div:nth-child(10) .fa,
-section.directorio div:nth-child(10) .fa,
-section.buzon div:nth-child(10) .fa,
-section.turismo div:nth-child(10) .fa {
-  color: #88BF41;
-}
-section.noticias div:nth-child(4) .fa,
-section.prensa div:nth-child(4) .fa,
-section.gabinete div:nth-child(4) .fa,
-section.directorio div:nth-child(4) .fa,
-section.buzon div:nth-child(4) .fa,
-section.turismo div:nth-child(4) .fa,
-section.noticias div:nth-child(11) .fa,
-section.prensa div:nth-child(11) .fa,
-section.gabinete div:nth-child(11) .fa,
-section.directorio div:nth-child(11) .fa,
-section.buzon div:nth-child(11) .fa,
-section.turismo div:nth-child(11) .fa {
-  color: #03AEC8;
-}
-section.noticias div:nth-child(5) .fa,
-section.prensa div:nth-child(5) .fa,
-section.gabinete div:nth-child(5) .fa,
-section.directorio div:nth-child(5) .fa,
-section.buzon div:nth-child(5) .fa,
-section.turismo div:nth-child(5) .fa,
-section.noticias div:nth-child(12) .fa,
-section.prensa div:nth-child(12) .fa,
-section.gabinete div:nth-child(12) .fa,
-section.directorio div:nth-child(12) .fa,
-section.buzon div:nth-child(12) .fa,
-section.turismo div:nth-child(12) .fa {
-  color: #912D8D;
-}
-section.noticias div:nth-child(6) .fa,
-section.prensa div:nth-child(6) .fa,
-section.gabinete div:nth-child(6) .fa,
-section.directorio div:nth-child(6) .fa,
-section.buzon div:nth-child(6) .fa,
-section.turismo div:nth-child(6) .fa,
-section.noticias div:nth-child(13) .fa,
-section.prensa div:nth-child(13) .fa,
-section.gabinete div:nth-child(13) .fa,
-section.directorio div:nth-child(13) .fa,
-section.buzon div:nth-child(13) .fa,
-section.turismo div:nth-child(13) .fa {
-  color: #F39D2C;
-}
-section.noticias div:nth-child(7) .fa,
-section.prensa div:nth-child(7) .fa,
-section.gabinete div:nth-child(7) .fa,
-section.directorio div:nth-child(7) .fa,
-section.buzon div:nth-child(7) .fa,
-section.turismo div:nth-child(7) .fa,
-section.noticias div:nth-child(14) .fa,
-section.prensa div:nth-child(14) .fa,
-section.gabinete div:nth-child(14) .fa,
-section.directorio div:nth-child(14) .fa,
-section.buzon div:nth-child(14) .fa,
-section.turismo div:nth-child(14) .fa {
-  color: #E6262B;
+section.noticias div .fa,
+section.prensa div .fa,
+section.gabinete div .fa,
+section.directorio div .fa,
+section.buzon div .fa,
+section.turismo div .fa {
+  color: #3DA5D8;
 }
 aside h2 {
   color: #222;
@@ -2549,6 +2492,15 @@ section.buzon form textarea {
 }
 .nota .notenav {
   padding: 20px 0;
+}
+.mensaje {
+  padding: 40px 0;
+}
+.mensaje strong {
+  color: #084A7A;
+}
+.mensaje p {
+  padding: 10px 0;
 }
 .otros {
   padding: 40px;

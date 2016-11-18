@@ -45,9 +45,9 @@ app.config(function($stateProvider, $urlRouterProvider){
       templateUrl : '/app/view/pago-de-predial.html',
       controller: 'MainCtrl'
     })
-    .state('mensaje-del-gobernador',{
-      url   : '/mensaje-del-gobernador',
-      templateUrl : '/app/view/mensaje-del-gobernador.html',
+    .state('mensaje-del-presidente-municipal',{
+      url   : '/mensaje-del-presidente-municipal',
+      templateUrl : '/app/view/mensaje-del-presidente-municipal.html',
       controller: 'MainCtrl'
     })
     .state('gabinete',{

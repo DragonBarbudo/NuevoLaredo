@@ -57,7 +57,7 @@ include dw4/_dw4.jade
 - menu('Servicios públicos', 'http://nuevolaredo.gob.mx/servweb/', '#tramites-y-servicios', {'target':'_blank'})
 - menu('Transparencia', 'http://nld.gob.mx/index.php?m=transparencia&tipo=oficios', null, {'target':'_blank'})
 - menu('Acércate <i class="fa fa-angle-down"></i>', '#acercate')
-- menu('Mensaje del Gobernador', '/mensaje-del-gobernador', '#acercate', {'ui-sref':'mensaje-del-gobernador'})
+- menu('Mensaje del Presidente Municipal', '/mensaje-del-presidente municipal', '#acercate', {'ui-sref':'mensaje-del-presidente-municipal'})
 - menu('Gabinete', '/gabinete', '#acercate', {'ui-sref':'gabinete'})
 - menu('Directorio', '/directorio', '#acercate', {'ui-sref':'directorio'})
 - menu('Centro integral de Atención a Ciudadanos', 'http://nuevolaredo.gob.mx/ciac-admin/', '#acercate', {'target':'_blank'})
@@ -133,18 +133,20 @@ mixin footer
         h2 Próximos eventos
         ul.proximos-eventos.container
             li.c12.ct6.cm12(ng-repeat="item in eventos" ng-click="noticiaOpen(item.id.$t)")
-              .container
-                .c3.g: .img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
+              .container.middle
+                .c3.g: .img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }").fluid
                 .c8.g
                   p {{item.gsx$titulo.$t}}
+                  .date
+                    i.fa.fa-calendar-o
+                    |  {{item.gsx$mes.$t}} {{item.gsx$dia.$t}}
         
               
               
       .c4.ct6.cm12.g.sobre
-        h2 Mensaje del Gobernador
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque accusantium, dolore impedit magnam repellendus repudiandae eius blanditiis iure molestiae sequi officia, soluta, commodi repellat? Ad voluptates minima cumque eius vitae.
-        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque tenetur, nobis veritatis nostrum possimus, distinctio, dolor iusto natus architecto ea dignissimos fugiat qui rem eligendi labore id sunt minus est!
-        p.tac: a(ui-sref="mensaje-del-gobernador").button.button-border Seguir leyendo
+        h2 Mensaje del Presidente Municipal
+        p Me dirijo a ustedes con el orgullo de representar el interés de todos y encaminar a nuestra gran ciudad hacia el horizonte de la modernidad.
+        p.tac: a(ui-sref="mensaje-del-presidente-municipal").button.button-border Seguir leyendo
         
         
       .c4.ct6.cm12.g
@@ -209,7 +211,10 @@ mixin moduloGabinete
 mixin moduloDirectorio
   .moduloDirectorio.container.fluid
     .c
-      .what {{item.nombre}}
+      .what
+        | {{item.gsx$nombre.$t}}
+        br
+        small {{item.gsx$area.$t}}
       .mail: a(ng-href="mailto:{{item.gsx$correo.$t}}")
         i.fa.fa-envelope-o
         |  {{item.gsx$correo.$t}}
