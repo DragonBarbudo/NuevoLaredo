@@ -1,21 +1,21 @@
 include ../../_config.jade
 section.sliders
-  slick(arrows="false" as-nav-for="#menuslider" responsive="[{breakpoint:720,settings:{arows:true}}]" init-onload=true data="prensa")#mainslider  
-      div(ng-repeat="item in prensa  | filter:{ gsx$tipo : {$t:'prensa'} }" ng-style="{ 'background-image':'url('+item.img+')' }")
+  slick(arrows="false" as-nav-for="#menuslider" responsive="[{breakpoint:720,settings:{arows:true}}]" init-onload=true data="prensa", ng-cloak)#mainslider  
+      div(ng-repeat="item in prensa  | filter:{ gsx$tipo : {$t:'articulo'} }" ng-style="{ 'background-image':'url('+item.img+')' }")
         .container.fluid.middle
-          .c10.o1.slider-date {{item.fecha}}
+          .c10.o1.slider-date {{item.gsx$fecha.$t}}
           .c6.o1.cm10.slider-title
-            | {{item.titulo}}
+            | {{item.gsx$titulo.$t}}
             br
-            small {{item.contenido | htmlToPlaintext | limitTo:60}}
+            small {{item.gsx$contenido.$t | htmlToPlaintext | limitTo:60}}
               | ...
           .c6.o1.cm10: a.slider-link(href="nota.html").button.button-border Leer más
-  slick(arrows="false" as-nav-for="#mainslider" focus-on-select="true" vertical-swiping="true" vertical="true" slides-to-show="3" init-onload=true data="prensa")#menuslider.nom
-    div(ng-repeat="item in prensa | filter:{ gsx$tipo : {$t:'prensa'} }")
+  slick(arrows="false" as-nav-for="#mainslider" focus-on-select="true" vertical-swiping="true" vertical="true" slides-to-show="3" init-onload=true data="prensa", ng-cloak)#menuslider.nom
+    div(ng-repeat="item in prensa | filter:{ gsx$tipo : {$t:'articulo'} }")
       div
         .container.fluid.middle
           .c10.slider-type Noticia
-          .c10.slider-title {{item.titulo}}
+          .c10.slider-title {{item.gsx$titulo.$t}}
 
 section.unete
   .container
@@ -34,6 +34,6 @@ section.ultimas-noticias
       p Te presentamos los sucesos más recientes y relevantes de nuestra comunidad.
   .container
     .c12
-      slick(slides-to-show="3" autoplay="true" responsive="[{breakpoint:720,settings:{slidesToShow:1}}]" init-onload=true data="prensa")#noticiasslider
+      slick(slides-to-show="3" autoplay="true" responsive="[{breakpoint:720,settings:{slidesToShow:1}}]" init-onload=true data="prensa", ng-cloak)#noticiasslider
         div(ng-repeat="item in prensa | filter:{ gsx$tipo : {$t:'noticia'} }")
           div: +moduloNota
