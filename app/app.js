@@ -28,7 +28,6 @@ app.config(function($stateProvider, $urlRouterProvider){
 
 
 
-
   $stateProvider
     .state('inicio',{
       url   : '/inicio',
@@ -86,13 +85,18 @@ app.run(function(){
 });
 
 
-app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDialog){
+app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDialog, $document, $rootScope){
   $scope.prensa=null;
   $scope.noticias;
   $scope.eventos;
   $scope.gabinete;
   $scope.directorio;
   $scope.item;
+
+  $rootScope.$on('$stateChangeSuccess', function() {
+   $document.scrollTopAnimated(0);
+});
+
 
   if($stateParams.id){
     var decodedurl = "https://crossorigin.me/"+decodeURIComponent($stateParams.id)+"?alt=json";
