@@ -1,20 +1,22 @@
 include ../../_config.jade
 section.sliders
   slick(arrows="false" as-nav-for="#menuslider" responsive="[{breakpoint:720,settings:{arows:true}}]" init-onload="true" data="prensa")#mainslider  
-      div(ng-repeat="item in prensa  | filter:{ gsx$tipo : {$t:'articulo'} }" ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
+      //div(ng-repeat="item in prensa  | filter:{ gsx$tipo : {$t:'articulo'} }" ng-style="{ 'background-image':'url('+#{item_img}+')' }")
+      div(ng-repeat="item in prensa  | filter:{ tipo : 'articulo' }" ng-style="{ 'background-image':'url('+#{item_img}+')' }")
         .container.fluid.middle
-          .c10.o1.slider-date {{item.gsx$fecha.$t}}
+          .c10.o1.slider-date {{#{item_fecha}}}
           .c6.o1.cm10.slider-title
-            | {{item.gsx$titulo.$t}}
+            | {{#{item_titulo}}}
             br
-            small {{item.gsx$contenido.$t | htmlToPlaintext | limitTo:60}}
+            small {{#{item_contenido} | htmlToPlaintext | limitTo:60}}
               | ...
-          .c6.o1.cm10: a.slider-link(ui-sref="nota({id:item.id.$t})").button.button-border Leer más
+          .c6.o1.cm10: a.slider-link(ui-sref="nota({id:#{item_id}})").button.button-border Leer más
   slick(arrows="false" as-nav-for="#mainslider" focus-on-select="true" vertical-swiping="true" vertical="true" slides-to-show="3" init-onload="true" data="prensa")#menuslider.nom
-    div(ng-repeat="item in prensa | filter:{ gsx$tipo : {$t:'articulo'} }")
+    //div(ng-repeat="item in prensa | filter:{ tipo : {$t:'articulo'} }")
+    div(ng-repeat="item in prensa | filter:{ tipo : 'articulo' }")
       .container.fluid.middle
         .c10.slider-type Noticia
-        .c10.slider-title {{item.gsx$titulo.$t}}
+        .c10.slider-title {{#{item_titulo}}}
 
 section.unete
   .container
@@ -23,7 +25,7 @@ section.unete
       p Suscríbete al boletín oficial y continua recibiendo información de valor.
     .c12.field
       form.container(ng-submit="suscribirme_mail()")
-        .c10.ct8.cm12: input(type="mail" ng-model="mail" placeholder="Escribe tu correo electrónico")
+        .c10.ct8.cm12: input(type="email" ng-model="mail" placeholder="Escribe tu correo electrónico" required)
         .c2.ct4.cm12: button(type="submit").button.button-rounded Suscribirme
 
 section.ultimas-noticias
@@ -34,5 +36,6 @@ section.ultimas-noticias
   .container
     .c12
       slick(slides-to-show="3" autoplay="true" responsive="[{breakpoint:720,settings:{slidesToShow:1}}]" init-onload="true" data="prensa")#noticiasslider
-        div(ng-repeat="item in prensa | filter:{ gsx$tipo : {$t:'noticia'} }")
+        //div(ng-repeat="item in prensa | filter:{ gsx$tipo : {$t:'noticia'} }")
+        div(ng-repeat="item in prensa | filter:{ tipo : 'noticia' }")
           div: +moduloNota

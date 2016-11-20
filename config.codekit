@@ -190,6 +190,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/app\/img\/presidente.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 148385,
+		"inputAbbreviatedPath": "\/app\/img\/presidente.jpg",
+		"outputAbbreviatedPath": "\/app\/img\/presidente.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/app\/img\/squares.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -303,15 +314,6 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
 		},
-	"\/app\/view\/inicio.html": {
-		"fileType": 8192,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/view\/inicio.html",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/app\/view\/inicio.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
@@ -345,20 +347,29 @@
 		},
 	"\/app\/view\/mensaje-del-presidente-municipal.html": {
 		"fileType": 8192,
-		"ignore": 1,
+		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/app\/view\/mensaje-del-presidente-municipal.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/app\/view\/mensaje-del-presidente-municipal.jade": {
+	"\/app\/view\/mensaje-del-presidente.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/view\/mensaje-del-presidente.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/view\/mensaje-del-presidente.jade": {
 		"compileDebug": 1,
 		"fileType": 512,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/app\/view\/mensaje-del-presidente-municipal.jade",
-		"outputAbbreviatedPath": "\/app\/view\/mensaje-del-presidente-municipal.html",
+		"inputAbbreviatedPath": "\/app\/view\/mensaje-del-presidente.jade",
+		"outputAbbreviatedPath": "\/app\/view\/mensaje-del-presidente.html",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
@@ -422,6 +433,70 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
+		},
+	"\/app\/view\/suscripcion.html": {
+		"fileType": 8192,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/view\/suscripcion.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/app\/view\/suscripcion.jade": {
+		"compileDebug": 1,
+		"fileType": 512,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/app\/view\/suscripcion.jade",
+		"outputAbbreviatedPath": "\/app\/view\/suscripcion.html",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
+	"\/data\/articulos\/1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 247948,
+		"inputAbbreviatedPath": "\/data\/articulos\/1.jpg",
+		"outputAbbreviatedPath": "\/data\/articulos\/1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/articulos\/2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 301849,
+		"inputAbbreviatedPath": "\/data\/articulos\/2.jpg",
+		"outputAbbreviatedPath": "\/data\/articulos\/2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/articulos\/3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5.10947e+06,
+		"inputAbbreviatedPath": "\/data\/articulos\/3.jpg",
+		"outputAbbreviatedPath": "\/data\/articulos\/3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/data\/articulos\/4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 234216,
+		"inputAbbreviatedPath": "\/data\/articulos\/4.jpg",
+		"outputAbbreviatedPath": "\/data\/articulos\/4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/data\/directorio.json": {
 		"fileType": 524288,
@@ -511,17 +586,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/data\/noticias.json": {
-		"fileType": 524288,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/data\/noticias.json",
-		"orderOutput": 0,
-		"outputAbbreviatedPath": "\/data\/noticias-min.json",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1
-		},
 	"\/data\/noticias\/1.jpg": {
 		"fileType": 16384,
 		"ignore": 0,
@@ -576,50 +640,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1
-		},
-	"\/data\/prensa\/1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 247948,
-		"inputAbbreviatedPath": "\/data\/prensa\/1.jpg",
-		"outputAbbreviatedPath": "\/data\/prensa\/1.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/data\/prensa\/2.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 301849,
-		"inputAbbreviatedPath": "\/data\/prensa\/2.jpg",
-		"outputAbbreviatedPath": "\/data\/prensa\/2.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/data\/prensa\/3.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5.10947e+06,
-		"inputAbbreviatedPath": "\/data\/prensa\/3.jpg",
-		"outputAbbreviatedPath": "\/data\/prensa\/3.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/data\/prensa\/4.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 234216,
-		"inputAbbreviatedPath": "\/data\/prensa\/4.jpg",
-		"outputAbbreviatedPath": "\/data\/prensa\/4.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
 		},
 	"\/dw4\/_dw4.jade": {
 		"compileDebug": 1,

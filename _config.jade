@@ -3,6 +3,45 @@
 
 include dw4/_dw4.jade
 
+
+- // JSON VARS ############
+- /* //GOOGLE STYLESHEETS 
+- var item_img         = "item.gsx$img.$t"
+- var item_fecha       = "item.gsx$fecha.$t"
+- var item_tipo        = "item.gsx$tipo.$t"
+- var item_titulo      = "item.gsx$titulo.$t"
+- var item_mes         = "item.gsx$mes.$t"
+- var item_dia         = "item.gsx$dia.$t"
+- var item_contenido   = "item.gsx$contenido.$t"
+- var item_nombre      = "item.gsx$nombre.$t"
+- var item_twitter     = "item.gsx$twitter.$t"
+- var item_facebook    = "item.gsx$facebook.$t"
+- var item_instagram   = "item.gsx$instagram.$t"
+- var item_linkedin    = "item.gsx$linkedin.$t"
+- var item_correo      = "item.gsx$correo.$t"
+- var item_telefono    = "item.gsx$telefono.$t"
+- var item_direccion1  = "item.gsx$direccion1.$t"
+- var item_direccion2  = "item.gsx$direccion2.$t"
+- var item_id          = "item.id.$t"
+- */
+- var item_img         = "item.img"
+- var item_fecha       = "item.fecha"
+- var item_tipo        = "item.tipo"
+- var item_titulo      = "item.titulo"
+- var item_mes         = "item.mes"
+- var item_dia         = "item.dia"
+- var item_contenido   = "item.contenido"
+- var item_nombre      = "item.nombre"
+- var item_twitter     = "item.twitter"
+- var item_facebook    = "item.facebook"
+- var item_instagram   = "item.instagram"
+- var item_linkedin    = "item.linkedin"
+- var item_correo      = "item.correo"
+- var item_telefono    = "item.telefono"
+- var item_direccion1  = "item.direccion1"
+- var item_direccion2  = "item.direccion2"
+- var item_id          = "item.id"
+
 - // CSS ################################################################################
 - css('https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/3.2.0/sanitize.css')
 - css('https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/css/buttons.min.css')
@@ -57,11 +96,14 @@ include dw4/_dw4.jade
 - menu('Servicios públicos', 'http://nuevolaredo.gob.mx/servweb/', '#tramites-y-servicios', {'target':'_blank'})
 - menu('Transparencia', 'http://nld.gob.mx/index.php?m=transparencia&tipo=oficios', null, {'target':'_blank'})
 - menu('Acércate <i class="fa fa-angle-down"></i>', '#acercate')
-- menu('Mensaje del Presidente Municipal', '/mensaje-del-presidente municipal', '#acercate', {'ui-sref':'mensaje-del-presidente-municipal'})
+- menu('Mensaje del Presidente', '/mensaje-del-presidente', '#acercate', {'ui-sref':'mensaje-del-presidente'})
 - menu('Gabinete', '/gabinete', '#acercate', {'ui-sref':'gabinete'})
 - menu('Directorio', '/directorio', '#acercate', {'ui-sref':'directorio'})
 - menu('Centro integral de Atención a Ciudadanos', 'http://nuevolaredo.gob.mx/ciac-admin/', '#acercate', {'target':'_blank'})
 - menu('Sala de prensa', '/sala-de-prensa', null, {'ui-sref':'sala-de-prensa'})
+
+
+
 
 
 
@@ -109,10 +151,10 @@ mixin metainfo
     .container
       .c
         i.fa.fa-calendar-o
-        |  {{item.gsx$fecha.$t}}
+        |  {{#{item_fecha}}}
       .c
         i.fa.fa-folder-o
-        |  {{item.gsx$tipo.$t}}
+        |  {{#{item_tipo}}}
       
       .c
         +socialshare
@@ -132,21 +174,21 @@ mixin footer
                       
         h2 Próximos eventos
         ul.proximos-eventos.container
-            li.c12.ct6.cm12(ng-repeat="item in eventos" ng-click="noticiaOpen(item.id.$t)")
+            li.c12.ct6.cm12(ng-repeat="item in eventos" ng-click="eventoOpen(#{item_id})")
               .container.middle
-                .c3.g: .img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }").fluid
+                .c3.g: .img(ng-style="{ 'background-image':'url('+#{item_img}+')' }").fluid
                 .c8.g
-                  p {{item.gsx$titulo.$t}}
+                  p {{#{item_titulo}}} 
                   .date
                     i.fa.fa-calendar-o
-                    |  {{item.gsx$mes.$t}} {{item.gsx$dia.$t}}
+                    |  {{#{item_mes}}} {{#{item_dia}}}
         
               
               
       .c4.ct6.cm12.g.sobre
         h2 Mensaje del Presidente Municipal
         p Me dirijo a ustedes con el orgullo de representar el interés de todos y encaminar a nuestra gran ciudad hacia el horizonte de la modernidad.
-        p.tac: a(ui-sref="mensaje-del-presidente-municipal").button.button-border Seguir leyendo
+        p.tac: a(ui-sref="mensaje-del-presidente").button.button-border Seguir leyendo
         
         
       .c4.ct6.cm12.g
@@ -172,60 +214,60 @@ mixin footer
 
 mixin moduloEvento
   .moduloNota.container.fluid
-    .c12.img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
-    .c12.g: .title {{item.gsx$titulo.$t}}
+    .c12.img(ng-style="{ 'background-image':'url('+#{item_img}+')' }")
+    .c12.g: .title {{#{item_titulo}}}
     .c12.g: .date
       i.fa.fa-calendar-o
-      |  {{item.gsx$mes.$t}} {{item.gsx$dia.$t}}
-    .c12.g: p.description(ng-bind-html="item.gsx$contenido.$t")
+      |  {{#{item_mes}}} {{#{item_dia}}}
+    .c12.g: p.description(ng-bind-html="#{item_contenido}")
 
 mixin moduloNota
-  a(ui-sref="nota({id:item.id.$t})").moduloNota.container.fluid
-    .c12.img(ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
-    .c12.g: .title {{item.gsx$titulo.$t}}
+  a(ui-sref="nota({id:#{item_id}})").moduloNota.container.fluid
+    .c12.img(ng-style="{ 'background-image':'url('+#{item_img}+')' }")
+    .c12.g: .title {{#{item_titulo}}}
     .c12.g: .date
       i.fa.fa-calendar-o
-      |  {{ item.gsx$fecha.$t }}
+      |  {{ #{item_fecha} }}
     .c12.g: p.description 
-      | {{item.gsx$contenido.$t | htmlToPlaintext | limitTo:90}}
+      | {{#{item_contenido} | htmlToPlaintext | limitTo:90}}
       | ...
       
 mixin moduloGabinete
   .moduloGabinete.container.fluid
-    a.c12.img(ui-sref="gabinete-detalle({id:item.id.$t})" ng-style="{ 'background-image':'url('+item.gsx$img.$t+')' }")
+    a.c12.img(ui-sref="gabinete-detalle({id:#{item_id}})" ng-style="{ 'background-image':'url('+#{item_img}+')' }")
       .hover.container.middle.center
         .c
-          .name {{item.gsx$nombre.$t}}
-          .job-title {{item.gsx$titulo.$t}}
+          .name {{#{item_nombre}}}
+          .job-title {{#{item_titulo}}}
     a(ui-sref="nota").c10.cm12.g
-      .title {{item.gsx$nombre.$t}}
+      .title {{#{item_nombre}}}
       p.description 
-        | {{item.gsx$contenido.$t | htmlToPlaintext | limitTo:90}}
+        | {{#{item_contenido} | htmlToPlaintext | limitTo:90}}
         | ...
     .c2.cm12.g.social.tac
-      a(ng-href="{{item.gsx$twitter.$t}}" ng-if="item.gsx$twitter.$t"): i.fa.fa-twitter
-      a(ng-href="{{item.gsx$facebook.$t}}" ng-if="item.gsx$facebook.$t"): i.fa.fa-facebook
-      a(ng-href="{{item.gsx$linkedin.$t}}" ng-if="item.gsx$linkedin.$t"): i.fa.fa-linkedin
-      a(ng-href="{{item.gsx$instagram.$t}}" ng-if="item.gsx$instagram.$t"): i.fa.fa-instagram
+      a(ng-href="{{#{item_twitter}}}" ng-if="#{item_twitter}"): i.fa.fa-twitter
+      a(ng-href="{{#{item_facebook}}}" ng-if="#{item_facebook}"): i.fa.fa-facebook
+      a(ng-href="{{#{item_linkedin}}}" ng-if="#{item_linkedin}"): i.fa.fa-linkedin
+      a(ng-href="{{#{item_instagram}}}" ng-if="#{item_instagram}"): i.fa.fa-instagram
 
 mixin moduloDirectorio
   .moduloDirectorio.container.fluid
     .c
       .what
-        | {{item.gsx$nombre.$t}}
+        | {{#{item_nombre}}}
         br
         small {{item.gsx$area.$t}}
-      .mail: a(ng-href="mailto:{{item.gsx$correo.$t}}")
+      .mail: a(ng-href="mailto:{{#{item_correo}}}")
         i.fa.fa-envelope-o
-        |  {{item.gsx$correo.$t}}
+        |  {{#{item_correo}}}
       .phone
         i.fa.fa-phone
-        |  {{item.gsx$telefono.$t}}
+        |  {{#{item_telefono}}}
       .addr
         i.fa.fa-map-marker
-        |  <strong>{{item.gsx$direccion1.$t}}</strong>
+        |  <strong>{{#{item_direccion1}}}</strong>
         br
-        | {{item.gsx$direccion2.$t}}
+        | {{#{item_direccion2}}}
 
 mixin accesos
   .accesos-directos

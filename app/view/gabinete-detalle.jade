@@ -1,16 +1,16 @@
 include ../../_config.jade
 
-+subheader('{{item.gsx$nombre.$t}}', '{{item.gsx$titulo.$t}}')
++subheader('{{'+item_nombre+'}}', '{{'+item_titulo+'}}')
 .container.nota
     
     .c12
     .c6.cm12.g
-      img(ng-src="{{item.gsx$img.$t}}", alt="").fluid
+      img(ng-src="{{#{item_img}}}", alt="").fluid
     .c6.cm12.g
       .container
-        .c12: div(ng-bind-html="item.gsx$contenido.$t")
+        .c12: div(ng-bind-html="#{item_contenido}")
         .c12.cm12.g.social.tac
-          a(ng-href="{{item.gsx$twitter.$t}}" ng-if="item.gsx$twitter.$t"): i.fa.fa-twitter
-          a(ng-href="{{item.gsx$facebook.$t}}" ng-if="item.gsx$facebook.$t"): i.fa.fa-facebook
-          a(ng-href="{{item.gsx$linkedin.$t}}" ng-if="item.gsx$linkedin.$t"): i.fa.fa-linkedin
-          a(ng-href="{{item.gsx$instagram.$t}}" ng-if="item.gsx$instagram.$t"): i.fa.fa-instagram
+          a(ng-href="{{#{item_twitter}}}" ng-if="#{item_twitter}"): i.fa.fa-twitter
+          a(ng-href="{{#{item_facebook}}}" ng-if="#{item_facebook}"): i.fa.fa-facebook
+          a(ng-href="{{#{item_linkedin}}}" ng-if="#{item_linkedin}"): i.fa.fa-linkedin
+          a(ng-href="{{#{item_instagram}}}" ng-if="#{item_instagram}"): i.fa.fa-instagram

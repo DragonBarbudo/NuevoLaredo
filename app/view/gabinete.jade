@@ -5,4 +5,4 @@ include ../../_config.jade
 section.gabinete
   //.container: .c6.o3: +moduloGabinete
   .container
-    .c4.cm6.g(ng-repeat="item in gabinete"): +moduloGabinete
+    .c4.ct6.cm6.g(ng-repeat="item in gabinete | orderBy: 'id'"): +moduloGabinete

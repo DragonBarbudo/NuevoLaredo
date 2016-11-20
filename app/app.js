@@ -44,9 +44,9 @@ app.config(function($stateProvider, $urlRouterProvider){
       templateUrl : '/app/view/pago-de-predial.html',
       controller: 'MainCtrl'
     })
-    .state('mensaje-del-presidente-municipal',{
-      url   : '/mensaje-del-presidente-municipal',
-      templateUrl : '/app/view/mensaje-del-presidente-municipal.html',
+    .state('mensaje-del-presidente',{
+      url   : '/mensaje-del-presidente',
+      templateUrl : '/app/view/mensaje-del-presidente.html',
       controller: 'MainCtrl'
     })
     .state('gabinete',{
@@ -62,6 +62,11 @@ app.config(function($stateProvider, $urlRouterProvider){
     .state('sala-de-prensa',{
       url   : '/sala-de-prensa',
       templateUrl : '/app/view/sala-de-prensa.html',
+      controller: 'MainCtrl'
+    })
+    .state('suscribirme',{
+      url   : '/suscribirme/:mail',
+      templateUrl : '/app/view/suscripcion.html',
       controller: 'MainCtrl'
     })
     .state('nota',{
@@ -85,27 +90,65 @@ app.run(function(){
 });
 
 
-app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDialog, $document, $rootScope){
-  $scope.prensa=null;
+app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDialog, $document, $rootScope, $state, $filter){
+  $scope.prensa;
   $scope.noticias;
-  $scope.eventos;
   $scope.gabinete;
   $scope.directorio;
   $scope.item;
+  $scope.mail;
+  $scope.user_mail;
+
+
 
   $rootScope.$on('$stateChangeSuccess', function() {
    $document.scrollTopAnimated(0);
-});
+  });
 
 
+  if($stateParams.mail){
+     $scope.user_mail = $stateParams.mail
+  }
+  $scope.suscribirme_mail = function(){ $state.go('suscribirme', {mail:$scope.mail}); };
+
+  apis.prensa().then(function(result){ $scope.prensa = result.data;
+    if($stateParams.id && $state.current.name == 'nota'){
+        var theid;
+        if( ($stateParams.id*1) <= 1 ){ theid="1"; }
+        else if( ($stateParams.id*1) >= $scope.prensa.length ){ theid=$scope.prensa.length; }
+        else { theid=$stateParams.id; }
+
+        $scope.item = $filter('filter')($scope.prensa, {id:theid})[0];
+    }
+  });
+  apis.gabinete().then(function(result){ $scope.gabinete = result.data;
+    if($stateParams.id && $state.current.name == 'gabinete-detalle'){
+        $scope.item = $filter('filter')($scope.gabinete, {id:$stateParams.id})[0];
+    }
+  });
+  apis.eventos().then(function(result){ $scope.eventos = result.data; });
+  apis.directorio().then(function(result){ $scope.directorio = result.data; });
+  //Open Evento
+  $scope.eventoOpen = function (theid) {
+      ngDialog.open({
+        template: 'noticiaTmp',
+        className: 'ngdialog-theme-default',
+        scope: $scope,
+        controller: ['$scope', 'apis', '$filter', function($scope, apis, $filter){
+          $scope.item = $filter('filter')($scope.eventos, {id:theid})[0];
+        }]
+      });
+  };
+  //Open Prensa
+
+
+
+
+/* //FOR GOOGLE STYLESHEETS
   if($stateParams.id){
     var decodedurl = "https://crossorigin.me/"+decodeURIComponent($stateParams.id)+"?alt=json";
     apis.item( decodedurl ).then(function(result){ $scope.item = result.data.entry; });
-
   }
-
-  var mail =  $location.path();
-  $scope.mail = mail.replace("/", "");
 
   apis.prensa().then(function(result){
     $scope.prensa = result.data.feed.entry;
@@ -122,12 +165,7 @@ app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDia
   apis.eventos().then(function(result){ $scope.eventos = result.data.feed.entry; });
 
   apis.directorio().then(function(result){ $scope.directorio = result.data.feed.entry; });
-
-  $scope.suscribirme_mail = function(){
-    window.location ='suscripcion.html#'+$scope.mail;
-  }
-
-  $scope.noticiaOpen = function (id) {
+  $scope.eventoOpen = function (id) {
         ngDialog.open({
           template: 'noticiaTmp',
           className: 'ngdialog-theme-default',
@@ -138,6 +176,7 @@ app.controller('MainCtrl', function($scope, apis, $location, $stateParams, ngDia
           }]
         });
     };
+    */
 }); //MainCtrl
 
 
@@ -168,8 +207,8 @@ app.factory('apis', function($q, $http){
     var deferred = $q.defer();
     $http({
       method    : "GET",
-      //url       : "data/eventos.json",
-      url        : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1aRSdMP9EvlDHt7S7kkDoc2WGob-CxIMocY9EkpYyXR8/od6/public/values?alt=json",
+      url       : "data/eventos.json",
+      //url        : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1aRSdMP9EvlDHt7S7kkDoc2WGob-CxIMocY9EkpYyXR8/od6/public/values?alt=json",
       headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
     }).then(function(result){
       deferred.resolve(result);
@@ -181,8 +220,8 @@ app.factory('apis', function($q, $http){
     var deferred = $q.defer();
     $http({
       method    : "GET",
-      //url       : "data/gabinete.json",
-      url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1CmY-2-blJMcBpstS3sVrDdMtUsUqMo3IZvwNJerHvKI/od6/public/values?alt=json",
+      url       : "data/gabinete.json",
+      //url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1CmY-2-blJMcBpstS3sVrDdMtUsUqMo3IZvwNJerHvKI/od6/public/values?alt=json",
       headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
     }).then(function(result){
       deferred.resolve(result);
@@ -194,8 +233,8 @@ app.factory('apis', function($q, $http){
     var deferred = $q.defer();
     $http({
       method    : "GET",
-      //url       : "data/directorio.json",
-      url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1UoBayKCH9DSJeOkwnNE07apiBK6PwtvuTjwTb5wxTfg/od6/public/values?alt=json",
+      url       : "data/directorio.json",
+      //url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1UoBayKCH9DSJeOkwnNE07apiBK6PwtvuTjwTb5wxTfg/od6/public/values?alt=json",
       headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
     }).then(function(result){
       deferred.resolve(result);
@@ -207,8 +246,8 @@ app.factory('apis', function($q, $http){
     var deferred = $q.defer();
     $http({
       method    : "GET",
-      //url       : "data/prensa.json",
-      url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1nIBrB1x6Sc6fAsLeIakNuCkSSMbLVNm3kfQLOxbt2H8/od6/public/values?alt=json",
+      url       : "data/prensa.json",
+      //url       : "https://crossorigin.me/https://spreadsheets.google.com/feeds/list/1nIBrB1x6Sc6fAsLeIakNuCkSSMbLVNm3kfQLOxbt2H8/od6/public/values?alt=json",
       headers   : { 'Content-type':'application/x-www-form-urlencoded; charset=UTF-8' }
     }).then(function(result){
       deferred.resolve(result);

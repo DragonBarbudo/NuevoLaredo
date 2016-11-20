@@ -1,67 +1,266 @@
 [
-  {
-    "id"          : "6",
-    "nombre"      : "Gabriel Ramírez",
-    "titulo"      : "Director Ejecutivo",
-    "img"         : "data/gabinete/6.jpg",
-    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
-    "facebook"    : "#",
-    "twitter"    : "#",
-    "linkedin"    : "#",
-    "instagram"    : "#"
-  },
-  {
-    "id"          : "5",
-    "nombre"      : "Gabriel Ramírez",
-    "titulo"      : "Director Ejecutivo",
-    "img"         : "data/gabinete/6.jpg",
-    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
-    "facebook"    : "#",
-    "twitter"    : "#",
-    "linkedin"    : "#",
-    "instagram"    : "#"
-  },
-  {
-    "id"          : "4",
-    "nombre"      : "Gabriel Ramírez",
-    "titulo"      : "Director Ejecutivo",
-    "img"         : "data/gabinete/6.jpg",
-    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
-    "facebook"    : "#",
-    "twitter"    : "#",
-    "linkedin"    : "#",
-    "instagram"    : "#"
-  },
-  {
-    "id"          : "3",
-    "nombre"      : "Gabriel Ramírez",
-    "titulo"      : "Director Ejecutivo",
-    "img"         : "data/gabinete/6.jpg",
-    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
-    "facebook"    : "#",
-    "twitter"    : "#",
-    "linkedin"    : "#",
-    "instagram"    : "#"
-  },
-  {
-    "id"          : "2",
-    "nombre"      : "Gabriel Ramírez",
-    "titulo"      : "Director Ejecutivo",
-    "img"         : "data/gabinete/6.jpg",
-    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
-    "facebook"    : "#",
-    "twitter"    : "#",
-    "linkedin"    : "#",
-    "instagram"    : "#"
-  },
-  {
-    "id"          : "1",
-    "nombre"      : "Gabriel Ramírez",
-    "titulo"      : "Director Ejecutivo",
-    "img"         : "data/gabinete/6.jpg",
-    "contenido"   : "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>",
-    "facebook"    : "#",
-    "twitter"    : "#"
-  }
-
+	{
+		"id": "23",
+		"nombre": "Lic. Dorina Lozano Coronado",
+		"titulo": "1 Sindico",
+		"img": "gabinete/DorinaLozanoCoronado.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "22",
+		"nombre": "Lic. Gustavo Mondragon Bolado",
+		"titulo": "2 Sindico",
+		"img": "gabinete/GustavoMondragonBolado.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "21",
+		"nombre": "Lic. Patricia L. Ferrara Theriot",
+		"titulo": "1 Regidor",
+		"img": "gabinete/PatriciaLFerraraTheriot.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "20",
+		"nombre": "Lic. Luis Roberto Moreno Sesma",
+		"titulo": "2 Regidor",
+		"img": "gabinete/LuisMorenoSesma.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "19",
+		"nombre": "Lic. Carmen Lilia Canturosas Villarreal",
+		"titulo": "3 Regidor",
+		"img": "gabinete/CarmenLiliaCanturosasVillarreal.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "18",
+		"nombre": "Lic. Manuel Canales Bermea",
+		"titulo": "4 Regidor",
+		"img": "gabinete/ManuelCanalesBermea.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "17",
+		"nombre": "Lic. Nora G. Hinojosa García",
+		"titulo": "5 Regidor",
+		"img": "gabinete/NoraGHinojosaGarcia.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "16",
+		"nombre": "C. P. José Ma. Gerardo Peña Maldonado",
+		"titulo": "6 Regidor",
+		"img": "gabinete/GerardoPenaMaldonado.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "15",
+		"nombre": "Arq. Imelda M. Sanmiguel Sánchez",
+		"titulo": "7 Regidor",
+		"img": "gabinete/ImeldaSanmiguelSanchez.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "14",
+		"nombre": "C.P. Fernando Torres Villarreal",
+		"titulo": "8 Regidor",
+		"img": "gabinete/FernandoTorresVillarreal.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "13",
+		"nombre": "C.P. Adriana C. García Sanmiguel",
+		"titulo": "9 Regidor",
+		"img": "gabinete/AdrianaGarciaSanmiguel.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "12",
+		"nombre": "Lic. Carlos Alberto Bulas Villarreal",
+		"titulo": "10 Regidor",
+		"img": "gabinete/CarlosBulasVillarreal.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "11",
+		"nombre": "Arq. Silvia A. Fernández Gallardo Boone",
+		"titulo": "11 Regidor",
+		"img": "gabinete/SilviaFernandezGBoone.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "10",
+		"nombre": "Lic. Juan José Zarate Quezada",
+		"titulo": "12 Regidor",
+		"img": "gabinete/JuanJoseZarateQuezada.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "9",
+		"nombre": "Prof. Julia Elida Ortega de Los Santos",
+		"titulo": "13 Regidor",
+		"img": "gabinete/JuliaElidaOrtegadeLosSantos.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "8",
+		"nombre": "Lic. Alfredo F. Guarneros Carranza",
+		"titulo": "14 Regidor",
+		"img": "gabinete/AlfredoGuarnerosCarranza.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "7",
+		"nombre": "Ana María Arechiga Guajardo",
+		"titulo": "15 Regidor",
+		"img": "gabinete/MariaArechigaGuajardo.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "6",
+		"nombre": "Ing. Jesús Valdez Zermeño",
+		"titulo": "16 Regidor",
+		"img": "gabinete/JesusValdezZermeno.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "5",
+		"nombre": "Juana Isidra Mata García",
+		"titulo": "17 Regidor",
+		"img": "gabinete/JuanaIsidraMataGarcia.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "4",
+		"nombre": "Lic. Rafael Tawil Rizo",
+		"titulo": "18 Regidor",
+		"img": "gabinete/RafaelTawilRizo.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "3",
+		"nombre": "Profra. Raquel Guajardo Martínez",
+		"titulo": "19 Regidor",
+		"img": "gabinete/RaquelGuajardoMartinez.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "2",
+		"nombre": "Lic. Adriana Ramírez Rubio",
+		"titulo": "20 Regidor",
+		"img": "gabinete/AdrianaRamirezRubio.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "1",
+		"nombre": "Lic. Guadalupe Carmona",
+		"titulo": "21 Regidor",
+		"img": "gabinete/GuadalupeCarmona.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	},
+	{
+		"id": "0",
+		"nombre": "Enrique Rivas Cuéllar",
+		"titulo": "Presidente Municipal",
+		"img": "gabinete/GuadalupeCarmona.jpg",
+		"contenido": "<p>NLD</p><p>NLD</p>",
+		"facebook": "",
+		"twitter": "",
+		"linkedin": "",
+		"instagram": ""
+	}
 ]

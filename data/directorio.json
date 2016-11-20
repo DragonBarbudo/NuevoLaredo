@@ -1,51 +1,101 @@
 [
-  {
-    "id"          : "6",
-    "nombre"      : "Secretaría de Atención",
-    "correo"      : "secretaria@nld.org.mx",
-    "telefono"    : "555-555-55",
-    "direccion_1" : "Av Vicente Guerrero 1500",
-    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
-  },
-  {
-    "id"          : "5",
-    "nombre"      : "Secretaría de Atención",
-    "correo"      : "secretaria@nld.org.mx",
-    "telefono"    : "555-555-55",
-    "direccion_1" : "Av Vicente Guerrero 1500",
-    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
-  },
-  {
-    "id"          : "4",
-    "nombre"      : "Secretaría de Atención",
-    "correo"      : "secretaria@nld.org.mx",
-    "telefono"    : "555-555-55",
-    "direccion_1" : "Av Vicente Guerrero 1500",
-    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
-  },
-  {
-    "id"          : "3",
-    "nombre"      : "Secretaría de Atención",
-    "correo"      : "secretaria@nld.org.mx",
-    "telefono"    : "555-555-55",
-    "direccion_1" : "Av Vicente Guerrero 1500",
-    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
-  },
-  {
-    "id"          : "2",
-    "nombre"      : "Secretaría de Atención",
-    "correo"      : "secretaria@nld.org.mx",
-    "telefono"    : "555-555-55",
-    "direccion_1" : "Av Vicente Guerrero 1500",
-    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
-  },
-  {
-    "id"          : "1",
-    "nombre"      : "Secretaría de Atención",
-    "correo"      : "secretaria@nld.org.mx",
-    "telefono"    : "555-555-55",
-    "direccion_1" : "Av Vicente Guerrero 1500",
-    "direccion_2" : "CP 88000 Nuevo Laredo, Tamaulipas."
-  }
-
+	{
+		"id": "11",
+		"nombre": "Arq. Claudia Veronica Galaviz Sida",
+		"correo": "claudia.galaviz@nld.gob.mx",
+		"telefono": "745-8996",
+		"direccion_1": "Maclovio Herrera 2817",
+		"direccion_2": "Entre Ocampo,  Fracc. Ojo Caliente C.P. 88040.",
+		"area": "SECRETARIA DE INNOVACION GUBERNAMENTAL"
+	},
+	{
+		"id": "10",
+		"nombre": "Lic. Raul Cardenas Thomae",
+		"correo": "raul.cardenas@nld.gob.mx",
+		"telefono": "711-3531",
+		"direccion_1": "Av. Vicente Guerrero 1500",
+		"direccion_2": "2do Piso  Presidencia, Fracc. Ojo Caliente, C.P. 88040",
+		"area": "SECRETARIA DEL AYUNTAMIENTO"
+	},
+	{
+		"id": "9",
+		"nombre": "C.P.C. Daniel Tijerina Valdez",
+		"correo": "danieltijerina@nld.gob.mx",
+		"telefono": "711-3543",
+		"direccion_1": "Maclovio Herrera y Ocampo",
+		"direccion_2": "2do piso Torre Administrativa, Fracc. Ojo Caliente C.P. 88040",
+		"area": "SECRETARIA DE TESORERIA Y FINANZAS"
+	},
+	{
+		"id": "8",
+		"nombre": "Lic. Jose Ramon Ibarra Flores",
+		"correo": "jose.ibarra@nld.gob.mx",
+		"telefono": "711-3501",
+		"direccion_1": "Maclovio Herrera y Ocampo",
+		"direccion_2": "3er Piso Torre Administrativa, Fracc. Ojo Caliente C.P. 88040",
+		"area": "SECRETARIA DE LA CONTRALORIA Y TRANSPARENCIA"
+	},
+	{
+		"id": "7",
+		"nombre": "Ing. Caludia Marina Velasco",
+		"correo": "claudia.velasco@nld.gob.mx",
+		"telefono": "711-3559",
+		"direccion_1": "Calle Héroe de Nacataz 3200",
+		"direccion_2": "1er Piso de Anexo de Presidencia, Fracc. Ojo Caliente, C.P. 88040",
+		"area": "SECRETARIA DE ADMINISTRACION"
+	},
+	{
+		"id": "6",
+		"nombre": "Ing. Ruben Gerardo Ramos Garcia",
+		"correo": "ruben.ramos@nld.gob.mx",
+		"telefono": "712-1005",
+		"direccion_1": "Arteaga 3900",
+		"direccion_2": "Sector Aduana C.P. 88000",
+		"area": "SECRETARIA DE OBRAS PUBLICAS, DESARROLLO URBANO Y MEDIO AMBIENTE"
+	},
+	{
+		"id": "5",
+		"nombre": "Lic. Jose Guadalupe Torres Castillo",
+		"correo": "jose.torres@nld.gob.mx",
+		"telefono": "711-3930",
+		"direccion_1": "Vul. Avila Camacho Cruz ",
+		"direccion_2": "Calzada de los Heroes",
+		"area": "SECRETARIA DE SEGURIDAD PUBLICA Y VIALIDAD"
+	},
+	{
+		"id": "4",
+		"nombre": "Lic. Iliana Maribel Medina Garcia",
+		"correo": "iliana.medina@nld.gob.mx",
+		"telefono": "711-3480",
+		"direccion_1": "Calle Héroe de Nacataz 3301",
+		"direccion_2": "Fracc. Ojo Caliente C.P. 88040.",
+		"area": "SECRETARIA DE DESARROLLO HUMANO Y SOCIAL"
+	},
+	{
+		"id": "3",
+		"nombre": "Ing. Francisco Javier Solis Morales",
+		"correo": "francisco.solis@nld.gob.mx",
+		"telefono": "712-0327",
+		"direccion_1": "Mariano Matamoros 309",
+		"direccion_2": "2do Piso Ant. Banco Longoria, Sector Centro, C.P. 88000",
+		"area": "SECRETARIA DE DESARROLLO ECONOMICO"
+	},
+	{
+		"id": "2",
+		"nombre": "C.Irma Gladis Coss Pineda",
+		"correo": "gladis.coss@nld.gob.mx",
+		"telefono": "712-1291",
+		"direccion_1": "Calle Maclovio Herrera",
+		"direccion_2": "Oficinas de Centro Civico Cantu E. Rosas, Fracc. Ojo Caliente C.P. 88040",
+		"area": "SECRETARIA DE ARTE, CULTURA Y DEPORTE"
+	},
+	{
+		"id": "1",
+		"nombre": "C. Irma Eugenia Richer de Leon",
+		"correo": "irma.richer@nld.gob.mx",
+		"telefono": "712-0242",
+		"direccion_1": "Av. Corona 210",
+		"direccion_2": "Hidalgo C.P. 88160",
+		"area": "SECRETARIA DE SERIVICIOS PUBLICOS PRIMARIOS"
+	}
 ]
